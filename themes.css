@@ -1,0 +1,1606 @@
+/* =========================================================
+   TEACHER PRO
+   css/themes.css
+   نظام الثيمات الكامل - 10 ثيمات
+   ========================================================= */
+
+
+/* =========================================================
+   BASE THEME SYSTEM
+   ========================================================= */
+
+:root {
+
+    --theme-name: "Purple Pink";
+
+    --primary: #8b5cf6;
+    --primary-rgb: 139, 92, 246;
+
+    --secondary: #ec4899;
+    --secondary-rgb: 236, 72, 153;
+
+    --accent: #f472b6;
+    --accent-rgb: 244, 114, 182;
+
+    --bg-main: #08080d;
+    --bg-secondary: #101017;
+    --bg-tertiary: #171720;
+
+    --glass:
+        rgba(255, 255, 255, 0.055);
+
+    --glass-strong:
+        rgba(255, 255, 255, 0.085);
+
+    --glass-border:
+        rgba(255, 255, 255, 0.11);
+
+    --glass-highlight:
+        rgba(255, 255, 255, 0.17);
+
+    --text: #ffffff;
+    --text-secondary: #d5d5df;
+    --text-muted: #858592;
+
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #06b6d4;
+
+    --theme-glow:
+        0 0 35px
+        rgba(
+            var(--primary-rgb),
+            0.16
+        );
+
+    --theme-shadow:
+        0 25px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.38
+        );
+
+}
+
+
+/* =========================================================
+   GLOBAL THEME BACKGROUND
+   ========================================================= */
+
+body {
+
+    background:
+        var(--bg-main);
+
+}
+
+
+body::before {
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(
+                var(--primary-rgb),
+                0.12
+            ),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(
+                var(--secondary-rgb),
+                0.10
+            ),
+            transparent 32%
+        );
+
+}
+
+
+body::after {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(
+                var(--primary-rgb),
+                0.035
+            ),
+            transparent 40%,
+            rgba(
+                var(--secondary-rgb),
+                0.025
+            )
+        );
+
+}
+
+
+/* =========================================================
+   THEME 01
+   RED / GREEN
+   ========================================================= */
+
+[data-theme="red-green"] {
+
+    --theme-name: "Red Green";
+
+    --primary: #ef4444;
+    --primary-rgb: 239, 68, 68;
+
+    --secondary: #22c55e;
+    --secondary-rgb: 34, 197, 94;
+
+    --accent: #86efac;
+    --accent-rgb: 134, 239, 172;
+
+    --bg-main: #090b0a;
+    --bg-secondary: #101512;
+    --bg-tertiary: #171d19;
+
+}
+
+
+[data-theme="red-green"] .theme-glow {
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            239,
+            68,
+            68,
+            0.18
+        ),
+
+        0 0 55px
+        rgba(
+            34,
+            197,
+            94,
+            0.08
+        );
+
+}
+
+
+/* =========================================================
+   THEME 02
+   PURPLE / PINK
+   ========================================================= */
+
+[data-theme="purple-pink"] {
+
+    --theme-name: "Purple Pink";
+
+    --primary: #8b5cf6;
+    --primary-rgb: 139, 92, 246;
+
+    --secondary: #ec4899;
+    --secondary-rgb: 236, 72, 153;
+
+    --accent: #f9a8d4;
+    --accent-rgb: 249, 168, 212;
+
+    --bg-main: #09080e;
+    --bg-secondary: #12101a;
+    --bg-tertiary: #1a1624;
+
+}
+
+
+[data-theme="purple-pink"] .theme-glow {
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            139,
+            92,
+            246,
+            0.20
+        ),
+
+        0 0 55px
+        rgba(
+            236,
+            72,
+            153,
+            0.10
+        );
+
+}
+
+
+/* =========================================================
+   THEME 03
+   GRAY / RED
+   ========================================================= */
+
+[data-theme="gray-red"] {
+
+    --theme-name: "Gray Red";
+
+    --primary: #ef4444;
+    --primary-rgb: 239, 68, 68;
+
+    --secondary: #71717a;
+    --secondary-rgb: 113, 113, 122;
+
+    --accent: #fca5a5;
+    --accent-rgb: 252, 165, 165;
+
+    --bg-main: #090909;
+    --bg-secondary: #121212;
+    --bg-tertiary: #1c1c1c;
+
+}
+
+
+[data-theme="gray-red"] .theme-glow {
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            239,
+            68,
+            68,
+            0.18
+        );
+
+}
+
+
+/* =========================================================
+   THEME 04
+   RED / BLUE
+   ========================================================= */
+
+[data-theme="red-blue"] {
+
+    --theme-name: "Red Blue";
+
+    --primary: #ef4444;
+    --primary-rgb: 239, 68, 68;
+
+    --secondary: #3b82f6;
+    --secondary-rgb: 59, 130, 246;
+
+    --accent: #60a5fa;
+    --accent-rgb: 96, 165, 250;
+
+    --bg-main: #080a10;
+    --bg-secondary: #0e121b;
+    --bg-tertiary: #151a25;
+
+}
+
+
+[data-theme="red-blue"] .theme-glow {
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            239,
+            68,
+            68,
+            0.17
+        ),
+
+        0 0 55px
+        rgba(
+            59,
+            130,
+            246,
+            0.11
+        );
+
+}
+
+
+/* =========================================================
+   THEME 05
+   BLACK / PURPLE
+   ========================================================= */
+
+[data-theme="black-purple"] {
+
+    --theme-name: "Black Purple";
+
+    --primary: #a855f7;
+    --primary-rgb: 168, 85, 247;
+
+    --secondary: #7c3aed;
+    --secondary-rgb: 124, 58, 237;
+
+    --accent: #c084fc;
+    --accent-rgb: 192, 132, 252;
+
+    --bg-main: #030305;
+    --bg-secondary: #08070d;
+    --bg-tertiary: #110d18;
+
+    --glass:
+        rgba(255,255,255,0.045);
+
+}
+
+
+[data-theme="black-purple"] .theme-glow {
+
+    box-shadow:
+
+        0 0 40px
+        rgba(
+            168,
+            85,
+            247,
+            0.25
+        );
+
+}
+
+
+/* =========================================================
+   THEME 06
+   BROWN / WHITE
+   ========================================================= */
+
+[data-theme="brown-white"] {
+
+    --theme-name: "Brown White";
+
+    --primary: #b7794b;
+    --primary-rgb: 183, 121, 75;
+
+    --secondary: #e7e5e4;
+    --secondary-rgb: 231, 229, 228;
+
+    --accent: #f5f5f4;
+    --accent-rgb: 245, 245, 244;
+
+    --bg-main: #100c09;
+    --bg-secondary: #17110c;
+    --bg-tertiary: #211912;
+
+    --text: #fffaf5;
+    --text-secondary: #e8ddd3;
+    --text-muted: #a89587;
+
+}
+
+
+[data-theme="brown-white"] .theme-glow {
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            183,
+            121,
+            75,
+            0.20
+        );
+
+}
+
+
+/* =========================================================
+   THEME 07
+   CYAN / GREEN
+   ========================================================= */
+
+[data-theme="cyan-green"] {
+
+    --theme-name: "Cyan Green";
+
+    --primary: #06b6d4;
+    --primary-rgb: 6, 182, 212;
+
+    --secondary: #22c55e;
+    --secondary-rgb: 34, 197, 94;
+
+    --accent: #67e8f9;
+    --accent-rgb: 103, 232, 249;
+
+    --bg-main: #050c0d;
+    --bg-secondary: #091617;
+    --bg-tertiary: #0e2020;
+
+}
+
+
+[data-theme="cyan-green"] .theme-glow {
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            6,
+            182,
+            212,
+            0.20
+        ),
+
+        0 0 55px
+        rgba(
+            34,
+            197,
+            94,
+            0.10
+        );
+
+}
+
+
+/* =========================================================
+   THEME 08
+   GREEN / PURPLE
+   ========================================================= */
+
+[data-theme="green-purple"] {
+
+    --theme-name: "Green Purple";
+
+    --primary: #22c55e;
+    --primary-rgb: 34, 197, 94;
+
+    --secondary: #8b5cf6;
+    --secondary-rgb: 139, 92, 246;
+
+    --accent: #a78bfa;
+    --accent-rgb: 167, 139, 250;
+
+    --bg-main: #070b09;
+    --bg-secondary: #0c130f;
+    --bg-tertiary: #13151c;
+
+}
+
+
+[data-theme="green-purple"] .theme-glow {
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            34,
+            197,
+            94,
+            0.17
+        ),
+
+        0 0 55px
+        rgba(
+            139,
+            92,
+            246,
+            0.12
+        );
+
+}
+
+
+/* =========================================================
+   THEME 09
+   BLUE / MAROON
+   ========================================================= */
+
+[data-theme="blue-maroon"] {
+
+    --theme-name: "Blue Maroon";
+
+    --primary: #3b82f6;
+    --primary-rgb: 59, 130, 246;
+
+    --secondary: #800020;
+    --secondary-rgb: 128, 0, 32;
+
+    --accent: #93c5fd;
+    --accent-rgb: 147, 197, 253;
+
+    --bg-main: #070a10;
+    --bg-secondary: #0d111a;
+    --bg-tertiary: #17121a;
+
+}
+
+
+[data-theme="blue-maroon"] .theme-glow {
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            59,
+            130,
+            246,
+            0.18
+        ),
+
+        0 0 55px
+        rgba(
+            128,
+            0,
+            32,
+            0.14
+        );
+
+}
+
+
+/* =========================================================
+   THEME 10
+   ORANGE / GREEN
+   ========================================================= */
+
+[data-theme="orange-green"] {
+
+    --theme-name: "Orange Green";
+
+    --primary: #f97316;
+    --primary-rgb: 249, 115, 22;
+
+    --secondary: #22c55e;
+    --secondary-rgb: 34, 197, 94;
+
+    --accent: #86efac;
+    --accent-rgb: 134, 239, 172;
+
+    --bg-main: #0b0b07;
+    --bg-secondary: #14150d;
+    --bg-tertiary: #1c1c12;
+
+}
+
+
+[data-theme="orange-green"] .theme-glow {
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            249,
+            115,
+            22,
+            0.20
+        ),
+
+        0 0 55px
+        rgba(
+            34,
+            197,
+            94,
+            0.10
+        );
+
+}
+
+
+/* =========================================================
+   GLASS SYSTEM
+   ========================================================= */
+
+.glass {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            var(--glass-strong),
+            var(--glass)
+        );
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    backdrop-filter:
+        blur(18px)
+        saturate(130%);
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(130%);
+
+    box-shadow:
+        var(--theme-shadow);
+
+}
+
+
+.glass:hover {
+
+    border-color:
+        rgba(
+            var(--primary-rgb),
+            0.28
+        );
+
+    box-shadow:
+
+        var(--theme-shadow),
+        var(--theme-glow);
+
+}
+
+
+/* =========================================================
+   THEME GLOW ELEMENTS
+   ========================================================= */
+
+.theme-glow {
+
+    box-shadow:
+        var(--theme-glow);
+
+}
+
+
+.theme-border {
+
+    border-color:
+        rgba(
+            var(--primary-rgb),
+            0.35
+        ) !important;
+
+}
+
+
+.theme-color {
+
+    color:
+        var(--primary) !important;
+
+}
+
+
+.theme-background {
+
+    background:
+        var(--primary) !important;
+
+}
+
+
+.theme-gradient {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        ) !important;
+
+}
+
+
+/* =========================================================
+   GRADIENT TEXT
+   ========================================================= */
+
+.theme-gradient-text {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary),
+            var(--accent)
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+/* =========================================================
+   GLOW TEXT
+   ========================================================= */
+
+.theme-glow-text {
+
+    color:
+        var(--text);
+
+    text-shadow:
+
+        0 0 10px
+        rgba(
+            var(--primary-rgb),
+            0.45
+        ),
+
+        0 0 25px
+        rgba(
+            var(--secondary-rgb),
+            0.20
+        );
+
+}
+
+
+/* =========================================================
+   GLOW ICON
+   ========================================================= */
+
+.theme-icon {
+
+    color:
+        var(--primary);
+
+    filter:
+
+        drop-shadow(
+            0 0 7px
+            rgba(
+                var(--primary-rgb),
+                0.48
+            )
+        );
+
+}
+
+
+.theme-icon:hover {
+
+    filter:
+
+        drop-shadow(
+            0 0 12px
+            rgba(
+                var(--primary-rgb),
+                0.75
+            )
+        );
+
+}
+
+
+/* =========================================================
+   NAVIGATION THEME
+   ========================================================= */
+
+.nav-item.active {
+
+    color:
+        var(--primary);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(
+                var(--primary-rgb),
+                0.13
+            ),
+            rgba(
+                var(--secondary-rgb),
+                0.07
+            )
+        );
+
+    border-color:
+        rgba(
+            var(--primary-rgb),
+            0.20
+        );
+
+    box-shadow:
+
+        inset
+        0 0 18px
+        rgba(
+            var(--primary-rgb),
+            0.04
+        );
+
+}
+
+
+.nav-item.active .nav-icon {
+
+    color:
+        var(--primary);
+
+    filter:
+
+        drop-shadow(
+            0 0 8px
+            rgba(
+                var(--primary-rgb),
+                0.60
+            )
+        );
+
+}
+
+
+/* =========================================================
+   THEME CARD ACTIVE
+   ========================================================= */
+
+.theme-card.active {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+
+        0 0 0 1px
+        rgba(
+            var(--primary-rgb),
+            0.18
+        ),
+
+        0 0 30px
+        rgba(
+            var(--primary-rgb),
+            0.16
+        );
+
+}
+
+
+.theme-card.active::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        inherit;
+
+    pointer-events:
+        none;
+
+    box-shadow:
+        inset
+        0 0 20px
+        rgba(
+            var(--primary-rgb),
+            0.08
+        );
+
+}
+
+
+/* =========================================================
+   THEME PREVIEW COLORS
+   ========================================================= */
+
+.theme-preview-red-green {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #111111 48%,
+            #22c55e
+        );
+
+}
+
+
+.theme-preview-purple-pink {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #171020 48%,
+            #ec4899
+        );
+
+}
+
+
+.theme-preview-gray-red {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #71717a,
+            #111111 48%,
+            #ef4444
+        );
+
+}
+
+
+.theme-preview-red-blue {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #11121a 48%,
+            #3b82f6
+        );
+
+}
+
+
+.theme-preview-black-purple {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #030305,
+            #11081a 50%,
+            #a855f7
+        );
+
+}
+
+
+.theme-preview-brown-white {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #6f452b,
+            #21150d 48%,
+            #f5f5f4
+        );
+
+}
+
+
+.theme-preview-cyan-green {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #06b6d4,
+            #071617 48%,
+            #22c55e
+        );
+
+}
+
+
+.theme-preview-green-purple {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #10140f 48%,
+            #8b5cf6
+        );
+
+}
+
+
+.theme-preview-blue-maroon {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #0c1018 48%,
+            #800020
+        );
+
+}
+
+
+.theme-preview-orange-green {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f97316,
+            #15150b 48%,
+            #22c55e
+        );
+
+}
+
+
+/* =========================================================
+   THEME BUTTON
+   ========================================================= */
+
+.theme-button {
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.045
+        );
+
+    color:
+        var(--text-secondary);
+
+    transition:
+        all 0.25s
+        ease;
+
+}
+
+
+.theme-button:hover {
+
+    border-color:
+        rgba(
+            var(--primary-rgb),
+            0.35
+        );
+
+    color:
+        var(--primary);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(
+            var(--primary-rgb),
+            0.10
+        );
+
+}
+
+
+/* =========================================================
+   GLOW BUTTON
+   ========================================================= */
+
+.btn-theme {
+
+    position:
+        relative;
+
+    border:
+        1px solid
+        rgba(
+            var(--primary-rgb),
+            0.35
+        );
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(
+                var(--primary-rgb),
+                0.18
+            ),
+            rgba(
+                var(--secondary-rgb),
+                0.10
+            )
+        );
+
+    color:
+        var(--text);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(
+            var(--primary-rgb),
+            0.08
+        );
+
+}
+
+
+.btn-theme:hover {
+
+    border-color:
+        rgba(
+            var(--primary-rgb),
+            0.65
+        );
+
+    box-shadow:
+
+        0 0 25px
+        rgba(
+            var(--primary-rgb),
+            0.20
+        );
+
+}
+
+
+/* =========================================================
+   THEME SWITCH ANIMATION
+   ========================================================= */
+
+.theme-switching {
+
+    animation:
+        themeSwitch
+        0.45s
+        ease;
+
+}
+
+
+@keyframes themeSwitch {
+
+    0% {
+
+        opacity:
+            0.72;
+
+        filter:
+            brightness(0.75);
+
+    }
+
+    45% {
+
+        opacity:
+            0.90;
+
+        filter:
+            brightness(1.20);
+
+    }
+
+    100% {
+
+        opacity:
+            1;
+
+        filter:
+            brightness(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   THEME LIGHT ORBS
+   ========================================================= */
+
+.theme-orb {
+
+    position:
+        absolute;
+
+    width:
+        180px;
+
+    height:
+        180px;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(
+                var(--primary-rgb),
+                0.13
+            ),
+            transparent 70%
+        );
+
+    filter:
+        blur(10px);
+
+    animation:
+        orbFloat
+        9s
+        ease-in-out
+        infinite;
+
+}
+
+
+.theme-orb.secondary {
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(
+                var(--secondary-rgb),
+                0.11
+            ),
+            transparent 70%
+        );
+
+    animation-delay:
+        -4s;
+
+}
+
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            )
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                15px,
+                -20px
+            )
+            scale(1.08);
+
+    }
+
+}
+
+
+/* =========================================================
+   THEME LOADER
+   ========================================================= */
+
+.theme-loader {
+
+    position:
+        relative;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+}
+
+
+.theme-loader::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border:
+        3px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    border-top-color:
+        var(--primary);
+
+    border-right-color:
+        var(--secondary);
+
+    border-radius:
+        50%;
+
+    animation:
+        themeLoaderSpin
+        0.75s
+        linear
+        infinite;
+
+}
+
+
+.theme-loader::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        8px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(
+                var(--primary-rgb),
+                0.22
+            ),
+            transparent
+        );
+
+}
+
+
+@keyframes themeLoaderSpin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   STATUS COLORS USING THEME
+   ========================================================= */
+
+.status-theme {
+
+    border:
+        1px solid
+        rgba(
+            var(--primary-rgb),
+            0.20
+        );
+
+    background:
+        rgba(
+            var(--primary-rgb),
+            0.08
+        );
+
+    color:
+        var(--primary);
+
+}
+
+
+/* =========================================================
+   SELECTION / FOCUS
+   ========================================================= */
+
+::selection {
+
+    background:
+        rgba(
+            var(--primary-rgb),
+            0.35
+        );
+
+    color:
+        #ffffff;
+
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color:
+        rgba(
+            var(--primary-rgb),
+            0.55
+        );
+
+    box-shadow:
+
+        0 0 0 3px
+        rgba(
+            var(--primary-rgb),
+            0.08
+        ),
+
+        0 0 20px
+        rgba(
+            var(--primary-rgb),
+            0.06
+        );
+
+}
+
+
+/* =========================================================
+   SCROLLBAR THEME
+   ========================================================= */
+
+* {
+
+    scrollbar-width:
+        thin;
+
+    scrollbar-color:
+
+        rgba(
+            var(--primary-rgb),
+            0.45
+        )
+
+        rgba(
+            255,
+            255,
+            255,
+            0.035
+        );
+
+}
+
+
+::-webkit-scrollbar {
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.025
+        );
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    border-radius:
+        999px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(
+                var(--primary-rgb),
+                0.60
+            ),
+            rgba(
+                var(--secondary-rgb),
+                0.50
+            )
+        );
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+/* =========================================================
+   RESPONSIVE THEME EFFECTS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    :root {
+
+        --theme-glow:
+            0 0 25px
+            rgba(
+                var(--primary-rgb),
+                0.12
+            );
+
+    }
+
+
+    .theme-orb {
+
+        width:
+            130px;
+
+        height:
+            130px;
+
+        opacity:
+            0.65;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    :root {
+
+        --theme-glow:
+            0 0 18px
+            rgba(
+                var(--primary-rgb),
+                0.10
+            );
+
+    }
+
+
+    .theme-orb {
+
+        width:
+            90px;
+
+        height:
+            90px;
+
+        opacity:
+            0.45;
+
+    }
+
+}
+
+
+/* =========================================================
+   END OF FILE
+   ========================================================= */

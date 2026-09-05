@@ -1,0 +1,2089 @@
+/* =========================================================
+   TEACHER PRO
+   css/glass.css
+
+   نظام التأثيرات الزجاجية الفاخرة
+   Glassmorphism System
+   ========================================================= */
+
+
+/* =========================================================
+   متغيرات الزجاج
+   ========================================================= */
+
+:root {
+
+    --glass-white:
+        rgba(255, 255, 255, 0.06);
+
+    --glass-white-light:
+        rgba(255, 255, 255, 0.09);
+
+    --glass-white-strong:
+        rgba(255, 255, 255, 0.14);
+
+    --glass-dark:
+        rgba(5, 7, 14, 0.42);
+
+    --glass-dark-strong:
+        rgba(7, 10, 18, 0.78);
+
+    --glass-border:
+        rgba(255, 255, 255, 0.11);
+
+    --glass-border-light:
+        rgba(255, 255, 255, 0.18);
+
+    --glass-highlight:
+        rgba(255, 255, 255, 0.25);
+
+    --glass-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.28);
+
+    --glass-inner-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.08);
+
+    --glass-blur:
+        blur(18px);
+
+    --glass-blur-heavy:
+        blur(28px);
+
+}
+
+
+/* =========================================================
+   كارد زجاجي أساسي
+   ========================================================= */
+
+.glass-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--glass-border);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255, 255, 255, 0.08),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+    box-shadow:
+
+        var(--glass-shadow),
+
+        var(--glass-inner-shadow);
+
+    backdrop-filter:
+
+        var(--glass-blur);
+
+    -webkit-backdrop-filter:
+
+        var(--glass-blur);
+
+    transition:
+
+        transform
+        var(--transition-normal),
+
+        border-color
+        var(--transition-normal),
+
+        box-shadow
+        var(--transition-normal),
+
+        background
+        var(--transition-normal);
+
+}
+
+
+/* =========================================================
+   طبقة الانعكاس العلوية
+   ========================================================= */
+
+.glass-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    left: 0;
+
+    height: 45%;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255, 255, 255, 0.09),
+
+            rgba(255, 255, 255, 0)
+
+        );
+
+    opacity: 0.7;
+
+}
+
+
+/* =========================================================
+   خط الإضاءة العلوي
+   ========================================================= */
+
+.glass-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    right: 8%;
+
+    width: 84%;
+
+    height: 1px;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255, 255, 255, 0.32),
+
+            transparent
+
+        );
+
+    opacity: 0.75;
+
+}
+
+
+/* =========================================================
+   Hover للكارد الزجاجي
+   ========================================================= */
+
+.glass-card:hover {
+
+    transform:
+
+        translateY(-5px);
+
+    border-color:
+
+        rgba(
+            var(--primary-rgb),
+            0.3
+        );
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255, 255, 255, 0.11),
+
+            rgba(255, 255, 255, 0.035)
+
+        );
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0, 0, 0, 0.32),
+
+        0 0 35px
+        rgba(
+            var(--primary-rgb),
+            0.06
+        ),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.12);
+
+}
+
+
+/* =========================================================
+   زجاج ثقيل
+   ========================================================= */
+
+.glass-heavy {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius:
+
+        var(--radius-lg);
+
+    background:
+
+        rgba(10, 14, 24, 0.66);
+
+    box-shadow:
+
+        0 30px 90px
+        rgba(0, 0, 0, 0.38),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:
+
+        var(--glass-blur-heavy);
+
+    -webkit-backdrop-filter:
+
+        var(--glass-blur-heavy);
+
+}
+
+
+/* =========================================================
+   زجاج خفيف
+   ========================================================= */
+
+.glass-light {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius:
+
+        var(--radius-sm);
+
+    background:
+
+        rgba(255, 255, 255, 0.035);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.05);
+
+    backdrop-filter:
+
+        blur(10px);
+
+    -webkit-backdrop-filter:
+
+        blur(10px);
+
+}
+
+
+/* =========================================================
+   كارد زجاجي مضيء
+   ========================================================= */
+
+.glass-glow {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        rgba(
+            var(--primary-rgb),
+            0.24
+        );
+
+    border-radius:
+
+        var(--radius-md);
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(
+                var(--primary-rgb),
+                0.09
+            ),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+    box-shadow:
+
+        0 20px 55px
+        rgba(0, 0, 0, 0.28),
+
+        0 0 45px
+        rgba(
+            var(--primary-rgb),
+            0.09
+        );
+
+    backdrop-filter:
+
+        blur(18px);
+
+    -webkit-backdrop-filter:
+
+        blur(18px);
+
+}
+
+
+.glass-glow::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    top: -100px;
+
+    right: -60px;
+
+    border-radius: 50%;
+
+    background:
+
+        rgba(
+            var(--primary-rgb),
+            0.16
+        );
+
+    filter:
+
+        blur(45px);
+
+    pointer-events: none;
+
+}
+
+
+.glass-glow::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    right: 15%;
+
+    width: 70%;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(
+                var(--primary-rgb),
+                0.75
+            ),
+
+            transparent
+
+        );
+
+}
+
+
+/* =========================================================
+   كارد زجاجي أخضر
+   ========================================================= */
+
+.glass-success {
+
+    border-color:
+
+        rgba(
+            var(--secondary-rgb),
+            0.2
+        );
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(
+                var(--secondary-rgb),
+                0.08
+            ),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+}
+
+
+.glass-success:hover {
+
+    border-color:
+
+        rgba(
+            var(--secondary-rgb),
+            0.42
+        );
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(0, 0, 0, 0.25),
+
+        0 0 35px
+        rgba(
+            var(--secondary-rgb),
+            0.09
+        );
+
+}
+
+
+/* =========================================================
+   كارد زجاجي أحمر
+   ========================================================= */
+
+.glass-danger {
+
+    border-color:
+
+        rgba(
+            255,
+            77,
+            103,
+            0.2
+        );
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(
+                255,
+                77,
+                103,
+                0.08
+            ),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+}
+
+
+.glass-danger:hover {
+
+    border-color:
+
+        rgba(
+            255,
+            77,
+            103,
+            0.42
+        );
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(0, 0, 0, 0.25),
+
+        0 0 35px
+        rgba(
+            255,
+            77,
+            103,
+            0.1
+        );
+
+}
+
+
+/* =========================================================
+   كارد زجاجي أصفر
+   ========================================================= */
+
+.glass-warning {
+
+    border-color:
+
+        rgba(
+            255,
+            189,
+            89,
+            0.2
+        );
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(
+                255,
+                189,
+                89,
+                0.08
+            ),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+}
+
+
+/* =========================================================
+   كارد زجاجي أزرق
+   ========================================================= */
+
+.glass-info {
+
+    border-color:
+
+        rgba(
+            78,
+            167,
+            255,
+            0.22
+        );
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(
+                78,
+                167,
+                255,
+                0.08
+            ),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+}
+
+
+/* =========================================================
+   طبقة لمعان متحركة
+   ========================================================= */
+
+.glass-shine {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.glass-shine::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+
+    left: -60%;
+
+    width: 45%;
+
+    height: 200%;
+
+    pointer-events: none;
+
+    transform:
+
+        rotate(25deg);
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255, 255, 255, 0.11),
+
+            transparent
+
+        );
+
+    transition:
+
+        left 0.75s ease;
+
+}
+
+
+.glass-shine:hover::before {
+
+    left: 130%;
+
+}
+
+
+/* =========================================================
+   تأثير زجاج للعنوان
+   ========================================================= */
+
+.glass-title {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+
+        9px 14px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius:
+
+        13px;
+
+    background:
+
+        rgba(255, 255, 255, 0.035);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:
+
+        blur(12px);
+
+    -webkit-backdrop-filter:
+
+        blur(12px);
+
+}
+
+
+/* =========================================================
+   كارد بدون Hover
+   ========================================================= */
+
+.glass-static {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius:
+
+        var(--radius-md);
+
+    background:
+
+        rgba(255, 255, 255, 0.045);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.07);
+
+    backdrop-filter:
+
+        blur(16px);
+
+    -webkit-backdrop-filter:
+
+        blur(16px);
+
+}
+
+
+/* =========================================================
+   إطار زجاجي مضيء
+   ========================================================= */
+
+.glass-border-glow {
+
+    position: relative;
+
+}
+
+
+.glass-border-glow::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -1px;
+
+    z-index: -1;
+
+    border-radius: inherit;
+
+    padding: 1px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(
+                var(--primary-rgb),
+                0.55
+            ),
+
+            transparent 35%,
+
+            rgba(
+                var(--secondary-rgb),
+                0.4
+            ),
+
+            transparent 75%
+
+        );
+
+    mask:
+
+        linear-gradient(
+            #fff 0 0
+        )
+        content-box,
+
+        linear-gradient(
+            #fff 0 0
+        );
+
+    mask-composite:
+
+        exclude;
+
+    -webkit-mask:
+
+        linear-gradient(
+            #fff 0 0
+        )
+        content-box,
+
+        linear-gradient(
+            #fff 0 0
+        );
+
+    -webkit-mask-composite:
+
+        xor;
+
+}
+
+
+/* =========================================================
+   كارد تأثير عمق
+   ========================================================= */
+
+.glass-depth {
+
+    position: relative;
+
+    transform-style:
+
+        preserve-3d;
+
+    transition:
+
+        transform
+        var(--transition-normal);
+
+}
+
+
+.glass-depth:hover {
+
+    transform:
+
+        perspective(1000px)
+        rotateX(2deg)
+        rotateY(-2deg)
+        translateY(-5px);
+
+}
+
+
+/* =========================================================
+   كارد إحصائيات زجاجي
+   ========================================================= */
+
+.glass-stat-card {
+
+    position: relative;
+
+    min-height: 145px;
+
+    overflow: hidden;
+
+    padding: 20px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius:
+
+        20px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(255, 255, 255, 0.075),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0, 0, 0, 0.17),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:
+
+        blur(16px);
+
+    -webkit-backdrop-filter:
+
+        blur(16px);
+
+    transition:
+
+        transform
+        var(--transition-normal),
+
+        border-color
+        var(--transition-normal),
+
+        box-shadow
+        var(--transition-normal);
+
+}
+
+
+.glass-stat-card:hover {
+
+    transform:
+
+        translateY(-6px);
+
+    border-color:
+
+        rgba(
+            var(--primary-rgb),
+            0.28
+        );
+
+    box-shadow:
+
+        0 24px 65px
+        rgba(0, 0, 0, 0.28),
+
+        0 0 35px
+        rgba(
+            var(--primary-rgb),
+            0.06
+        );
+
+}
+
+
+/* =========================================================
+   ضوء الخلفية داخل الكارد
+   ========================================================= */
+
+.glass-orb {
+
+    position: absolute;
+
+    width: 130px;
+
+    height: 130px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter:
+
+        blur(30px);
+
+    opacity: 0.13;
+
+}
+
+
+.glass-orb.primary {
+
+    background:
+
+        rgb(
+            var(--primary-rgb)
+        );
+
+}
+
+
+.glass-orb.secondary {
+
+    background:
+
+        rgb(
+            var(--secondary-rgb)
+        );
+
+}
+
+
+.glass-orb.accent {
+
+    background:
+
+        rgb(
+            var(--accent-rgb)
+        );
+
+}
+
+
+.glass-orb.top-right {
+
+    top: -70px;
+
+    right: -55px;
+
+}
+
+
+.glass-orb.bottom-left {
+
+    bottom: -70px;
+
+    left: -55px;
+
+}
+
+
+/* =========================================================
+   تأثير الحدود المتحركة
+   ========================================================= */
+
+.glass-animated-border {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius:
+
+        var(--radius-md);
+
+    background:
+
+        rgba(255, 255, 255, 0.04);
+
+}
+
+
+.glass-animated-border::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 200%;
+
+    height: 200%;
+
+    top: -50%;
+
+    left: -50%;
+
+    background:
+
+        conic-gradient(
+
+            from 0deg,
+
+            transparent,
+
+            transparent,
+
+            rgba(
+                var(--primary-rgb),
+                0.6
+            ),
+
+            transparent,
+
+            rgba(
+                var(--secondary-rgb),
+                0.45
+            ),
+
+            transparent
+
+        );
+
+    animation:
+
+        glassBorderRotate
+        7s linear infinite;
+
+}
+
+
+.glass-animated-border::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    border-radius:
+
+        calc(
+            var(--radius-md) - 1px
+        );
+
+    background:
+
+        rgba(14, 18, 28, 0.88);
+
+    backdrop-filter:
+
+        blur(18px);
+
+    -webkit-backdrop-filter:
+
+        blur(18px);
+
+}
+
+
+.glass-animated-border > * {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+@keyframes glassBorderRotate {
+
+    to {
+
+        transform:
+
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   زجاج للتنبيهات
+   ========================================================= */
+
+.glass-notification {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    overflow: hidden;
+
+    padding: 16px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius:
+
+        17px;
+
+    background:
+
+        rgba(255, 255, 255, 0.04);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.06);
+
+    backdrop-filter:
+
+        blur(15px);
+
+    -webkit-backdrop-filter:
+
+        blur(15px);
+
+}
+
+
+.glass-notification::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    width: 4px;
+
+    height: 100%;
+
+    background:
+
+        var(--primary);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(
+            var(--primary-rgb),
+            0.55
+        );
+
+}
+
+
+.glass-notification.success::before {
+
+    background:
+
+        var(--success);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(
+            50,
+            213,
+            131,
+            0.5
+        );
+
+}
+
+
+.glass-notification.warning::before {
+
+    background:
+
+        var(--warning);
+
+}
+
+
+.glass-notification.danger::before {
+
+    background:
+
+        var(--danger);
+
+}
+
+
+/* =========================================================
+   Glass Panel
+   ========================================================= */
+
+.glass-panel {
+
+    position: relative;
+
+    padding: 22px;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius:
+
+        22px;
+
+    background:
+
+        linear-gradient(
+
+            160deg,
+
+            rgba(255, 255, 255, 0.07),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+    box-shadow:
+
+        0 20px 50px
+        rgba(0, 0, 0, 0.2),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:
+
+        blur(18px);
+
+    -webkit-backdrop-filter:
+
+        blur(18px);
+
+}
+
+
+/* =========================================================
+   Glass Section
+   ========================================================= */
+
+.glass-section {
+
+    position: relative;
+
+    padding: 24px;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius:
+
+        24px;
+
+    background:
+
+        rgba(255, 255, 255, 0.025);
+
+    backdrop-filter:
+
+        blur(14px);
+
+    -webkit-backdrop-filter:
+
+        blur(14px);
+
+}
+
+
+/* =========================================================
+   زجاج للأيقونات
+   ========================================================= */
+
+.glass-icon {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius:
+
+        15px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255, 255, 255, 0.09),
+
+            rgba(255, 255, 255, 0.025)
+
+        );
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.08),
+
+        0 8px 22px
+        rgba(0, 0, 0, 0.12);
+
+    backdrop-filter:
+
+        blur(12px);
+
+    -webkit-backdrop-filter:
+
+        blur(12px);
+
+    font-size: 21px;
+
+    transition:
+
+        transform
+        var(--transition-fast),
+
+        box-shadow
+        var(--transition-fast);
+
+}
+
+
+.glass-icon:hover {
+
+    transform:
+
+        scale(1.07)
+        rotate(-2deg);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.12),
+
+        0 12px 28px
+        rgba(
+            var(--primary-rgb),
+            0.14
+        );
+
+}
+
+
+/* =========================================================
+   Glass Input
+   ========================================================= */
+
+.glass-input {
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.1) !important;
+
+    background:
+
+        rgba(255, 255, 255, 0.04) !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.04);
+
+    backdrop-filter:
+
+        blur(10px);
+
+    -webkit-backdrop-filter:
+
+        blur(10px);
+
+}
+
+
+.glass-input:focus {
+
+    border-color:
+
+        rgba(
+            var(--primary-rgb),
+            0.5
+        ) !important;
+
+    background:
+
+        rgba(
+            var(--primary-rgb),
+            0.055
+        ) !important;
+
+    box-shadow:
+
+        0 0 0 3px
+        rgba(
+            var(--primary-rgb),
+            0.08
+        ),
+
+        0 0 25px
+        rgba(
+            var(--primary-rgb),
+            0.08
+        ) !important;
+
+}
+
+
+/* =========================================================
+   Glass Table
+   ========================================================= */
+
+.glass-table-wrapper {
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius:
+
+        18px;
+
+    background:
+
+        rgba(255, 255, 255, 0.025);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.05);
+
+    backdrop-filter:
+
+        blur(14px);
+
+    -webkit-backdrop-filter:
+
+        blur(14px);
+
+}
+
+
+.glass-table-wrapper thead {
+
+    background:
+
+        rgba(255, 255, 255, 0.055);
+
+}
+
+
+.glass-table-wrapper tbody tr {
+
+    transition:
+
+        background
+        var(--transition-fast);
+
+}
+
+
+.glass-table-wrapper tbody tr:hover {
+
+    background:
+
+        rgba(
+            var(--primary-rgb),
+            0.05
+        );
+
+}
+
+
+/* =========================================================
+   Glass Modal
+   ========================================================= */
+
+.glass-modal {
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    background:
+
+        rgba(13, 17, 27, 0.82);
+
+    box-shadow:
+
+        0 35px 100px
+        rgba(0, 0, 0, 0.55),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.1);
+
+    backdrop-filter:
+
+        blur(30px);
+
+    -webkit-backdrop-filter:
+
+        blur(30px);
+
+}
+
+
+/* =========================================================
+   Glass Navigation Item
+   ========================================================= */
+
+.glass-nav-item {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+
+        1px solid
+        transparent;
+
+    background:
+
+        rgba(255, 255, 255, 0.015);
+
+    transition:
+
+        border-color
+        var(--transition-fast),
+
+        background
+        var(--transition-fast),
+
+        transform
+        var(--transition-fast);
+
+}
+
+
+.glass-nav-item:hover {
+
+    transform:
+
+        translateX(-3px);
+
+    border-color:
+
+        rgba(255, 255, 255, 0.08);
+
+    background:
+
+        rgba(255, 255, 255, 0.055);
+
+}
+
+
+.glass-nav-item.active {
+
+    border-color:
+
+        rgba(
+            var(--primary-rgb),
+            0.22
+        );
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(
+                var(--primary-rgb),
+                0.12
+            ),
+
+            rgba(
+                var(--secondary-rgb),
+                0.025
+            )
+
+        );
+
+}
+
+
+/* =========================================================
+   انعكاس متحرك للكارد
+   ========================================================= */
+
+.glass-reflection {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.glass-reflection::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+
+    left: -20%;
+
+    width: 45%;
+
+    height: 280%;
+
+    pointer-events: none;
+
+    transform:
+
+        rotate(30deg);
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255, 255, 255, 0.08),
+
+            transparent
+
+        );
+
+    animation:
+
+        reflectionMove
+        9s ease-in-out infinite;
+
+}
+
+
+@keyframes reflectionMove {
+
+    0% {
+
+        left: -70%;
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        left: 120%;
+
+        opacity: 0.8;
+
+    }
+
+    100% {
+
+        left: 120%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   تأثير الضغط
+   ========================================================= */
+
+.glass-press {
+
+    transition:
+
+        transform
+        0.15s ease,
+
+        box-shadow
+        0.15s ease;
+
+}
+
+
+.glass-press:active {
+
+    transform:
+
+        scale(0.975);
+
+    box-shadow:
+
+        inset 0 2px 8px
+        rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* =========================================================
+   زجاج دائري
+   ========================================================= */
+
+.glass-circle {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    background:
+
+        rgba(255, 255, 255, 0.06);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.1),
+
+        0 8px 25px
+        rgba(0, 0, 0, 0.18);
+
+    backdrop-filter:
+
+        blur(15px);
+
+    -webkit-backdrop-filter:
+
+        blur(15px);
+
+}
+
+
+/* =========================================================
+   تأثير وهج نبضي
+   ========================================================= */
+
+.glass-pulse-glow {
+
+    animation:
+
+        glassPulseGlow
+        2.4s ease-in-out infinite;
+
+}
+
+
+@keyframes glassPulseGlow {
+
+    0% {
+
+        box-shadow:
+
+            0 0 0
+            rgba(
+                var(--primary-rgb),
+                0
+            );
+
+    }
+
+    50% {
+
+        box-shadow:
+
+            0 0 32px
+            rgba(
+                var(--primary-rgb),
+                0.18
+            );
+
+    }
+
+    100% {
+
+        box-shadow:
+
+            0 0 0
+            rgba(
+                var(--primary-rgb),
+                0
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   بطاقة شفافة جداً
+   ========================================================= */
+
+.glass-transparent {
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    background:
+
+        rgba(255, 255, 255, 0.018);
+
+    backdrop-filter:
+
+        blur(8px);
+
+    -webkit-backdrop-filter:
+
+        blur(8px);
+
+}
+
+
+/* =========================================================
+   شريط زجاجي
+   ========================================================= */
+
+.glass-bar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+
+        12px 15px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius:
+
+        15px;
+
+    background:
+
+        rgba(255, 255, 255, 0.04);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.06);
+
+    backdrop-filter:
+
+        blur(16px);
+
+    -webkit-backdrop-filter:
+
+        blur(16px);
+
+}
+
+
+/* =========================================================
+   تحسين الشفافية للشاشات الصغيرة
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .glass-card {
+
+        backdrop-filter:
+
+            blur(12px);
+
+        -webkit-backdrop-filter:
+
+            blur(12px);
+
+    }
+
+
+    .glass-heavy {
+
+        backdrop-filter:
+
+            blur(18px);
+
+        -webkit-backdrop-filter:
+
+            blur(18px);
+
+    }
+
+
+    .glass-modal {
+
+        backdrop-filter:
+
+            blur(20px);
+
+        -webkit-backdrop-filter:
+
+            blur(20px);
+
+    }
+
+
+    .glass-depth:hover {
+
+        transform:
+
+            translateY(-3px);
+
+    }
+
+}
+
+
+/* =========================================================
+   تقليل الحركة
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .glass-card,
+
+    .glass-depth,
+
+    .glass-icon,
+
+    .glass-nav-item,
+
+    .glass-reflection::after,
+
+    .glass-animated-border::before {
+
+        animation:
+
+            none !important;
+
+        transition:
+
+            none !important;
+
+    }
+
+}

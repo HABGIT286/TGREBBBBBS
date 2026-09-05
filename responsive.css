@@ -1,0 +1,3608 @@
+/* =========================================================
+   TEACHER PRO
+   css/responsive.css
+
+   Responsive Design
+   الهاتف — التابلت — اللابتوب — سطح المكتب — الشاشات الكبيرة
+   ========================================================= */
+
+
+/* =========================================================
+   1. قواعد عامة للشاشات الكبيرة
+   ========================================================= */
+
+html,
+body {
+
+    width: 100%;
+    min-width: 0;
+
+}
+
+
+body {
+
+    overflow-x: hidden;
+
+}
+
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+img,
+video,
+canvas,
+svg {
+
+    max-width: 100%;
+
+}
+
+
+/* =========================================================
+   2. الحاوية الرئيسية
+   ========================================================= */
+
+.app-container,
+.app-shell,
+.dashboard-container,
+.main-container {
+
+    width: 100%;
+    max-width: 1920px;
+    margin-inline: auto;
+
+}
+
+
+/* =========================================================
+   3. الشاشات الكبيرة جداً
+   ========================================================= */
+
+@media (min-width: 1921px) {
+
+    .app-container,
+    .app-shell,
+    .dashboard-container,
+    .main-container {
+
+        max-width: 2200px;
+
+    }
+
+
+    .main-content {
+
+        padding:
+
+            32px
+            42px;
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+
+            repeat(
+                5,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+
+            repeat(
+                6,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   4. سطح المكتب الكبير
+   1440px — 1920px
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+    .main-content {
+
+        padding:
+
+            28px
+            32px;
+
+    }
+
+
+    .content-grid {
+
+        grid-template-columns:
+
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .student-grid {
+
+        grid-template-columns:
+
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .class-grid {
+
+        grid-template-columns:
+
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .glass-card {
+
+        padding:
+            24px;
+
+    }
+
+}
+
+
+/* =========================================================
+   5. لابتوب عادي
+   1200px — 1439px
+   ========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+
+    .main-content {
+
+        padding:
+            24px;
+
+    }
+
+
+    .sidebar {
+
+        width:
+            250px;
+
+    }
+
+
+    .main-content {
+
+        margin-right:
+            250px;
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .student-grid {
+
+        grid-template-columns:
+
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .class-grid {
+
+        grid-template-columns:
+
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .content-two-columns {
+
+        grid-template-columns:
+
+            minmax(0, 1.4fr)
+            minmax(280px, 0.8fr);
+
+    }
+
+
+    .header-actions {
+
+        gap:
+            8px;
+
+    }
+
+
+    .stat-card {
+
+        min-height:
+            125px;
+
+    }
+
+}
+
+
+/* =========================================================
+   6. أجهزة سطح المكتب الصغيرة
+   992px — 1199px
+   ========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .sidebar {
+
+        width:
+            225px;
+
+    }
+
+
+    .main-content {
+
+        margin-right:
+            225px;
+
+        padding:
+            20px;
+
+    }
+
+
+    .sidebar-logo-text {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .sidebar-nav-item {
+
+        padding:
+            11px
+            12px;
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .student-grid {
+
+        grid-template-columns:
+
+            repeat(
+                3,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .class-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .content-two-columns {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .dashboard-header {
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .topbar {
+
+        min-height:
+            68px;
+
+    }
+
+
+    .clock-container {
+
+        padding:
+            8px
+            12px;
+
+    }
+
+
+    .clock-time {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .glass-card {
+
+        padding:
+            18px;
+
+    }
+
+
+    .section-title {
+
+        font-size:
+            20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   7. نقطة التحول للتابلت
+   991px
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    body {
+
+        overflow-x:
+            hidden;
+
+    }
+
+
+    .sidebar {
+
+        position:
+            fixed;
+
+        z-index:
+            9000;
+
+        top:
+            0;
+
+        right:
+            0;
+
+        bottom:
+            0;
+
+        width:
+            min(
+                300px,
+                82vw
+            );
+
+        transform:
+            translateX(105%);
+
+        transition:
+            transform
+            0.35s
+            cubic-bezier(
+                0.22,
+                1,
+                0.36,
+                1
+            );
+
+    }
+
+
+    .sidebar.active,
+    .sidebar.open {
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    .sidebar-overlay {
+
+        display:
+            block;
+
+        position:
+            fixed;
+
+        z-index:
+            8999;
+
+        inset:
+            0;
+
+        background:
+
+            rgba(
+                0,
+                0,
+                0,
+                0.55
+            );
+
+        backdrop-filter:
+            blur(5px);
+
+        -webkit-backdrop-filter:
+            blur(5px);
+
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        transition:
+
+            opacity
+            0.3s
+            ease,
+
+            visibility
+            0.3s
+            ease;
+
+    }
+
+
+    .sidebar-overlay.active,
+    .sidebar-overlay.show {
+
+        opacity:
+            1;
+
+        visibility:
+            visible;
+
+    }
+
+
+    .main-content {
+
+        width:
+            100%;
+
+        margin-right:
+            0;
+
+        padding:
+            18px;
+
+    }
+
+
+    .mobile-menu-button {
+
+        display:
+            inline-flex;
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .student-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .class-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .content-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .content-two-columns {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .three-columns {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .topbar {
+
+        padding:
+            10px
+            14px;
+
+    }
+
+
+    .topbar-left,
+    .topbar-right {
+
+        gap:
+            8px;
+
+    }
+
+
+    .page-title {
+
+        font-size:
+            23px;
+
+    }
+
+
+    .glass-card {
+
+        padding:
+            18px;
+
+    }
+
+
+    .table-wrapper {
+
+        width:
+            100%;
+
+        overflow-x:
+            auto;
+
+        -webkit-overflow-scrolling:
+            touch;
+
+    }
+
+
+    table {
+
+        min-width:
+            700px;
+
+    }
+
+}
+
+
+/* =========================================================
+   8. التابلت العمودي
+   768px — 991px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .topbar {
+
+        min-height:
+            70px;
+
+    }
+
+
+    .page-header {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            space-between;
+
+        gap:
+            15px;
+
+    }
+
+
+    .page-title {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .page-subtitle {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .student-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .theme-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .notes-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .notification-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   9. الهاتف الكبير
+   576px — 767px
+   ========================================================= */
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+    .main-content {
+
+        padding:
+            14px;
+
+    }
+
+
+    .topbar {
+
+        min-height:
+            64px;
+
+        padding:
+            8px
+            10px;
+
+    }
+
+
+    .topbar-title {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .page-title {
+
+        font-size:
+            21px;
+
+    }
+
+
+    .page-header {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            12px;
+
+    }
+
+
+    .page-header-actions {
+
+        width:
+            100%;
+
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            8px;
+
+    }
+
+
+    .page-header-actions > * {
+
+        flex:
+            1
+            1
+            auto;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap:
+            10px;
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .student-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .class-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .content-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .three-columns {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .theme-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .notes-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .notification-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .stat-card {
+
+        min-height:
+            110px;
+
+        padding:
+            14px;
+
+    }
+
+
+    .stat-value {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .stat-label {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .glass-card {
+
+        padding:
+            15px;
+
+        border-radius:
+            18px;
+
+    }
+
+
+    .card-header {
+
+        gap:
+            8px;
+
+    }
+
+
+    .card-title {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .action-buttons {
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .action-buttons button {
+
+        flex:
+            1
+            1
+            auto;
+
+    }
+
+
+    .clock-container {
+
+        min-width:
+            0;
+
+    }
+
+
+    .clock-time {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .clock-date {
+
+        font-size:
+            10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   10. الهاتف العادي
+   400px — 575px
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+    html {
+
+        font-size:
+            15px;
+
+    }
+
+
+    body {
+
+        min-width:
+            0;
+
+    }
+
+
+    .main-content {
+
+        padding:
+            10px;
+
+    }
+
+
+    .topbar {
+
+        min-height:
+            60px;
+
+        padding:
+            7px
+            8px;
+
+        gap:
+            7px;
+
+    }
+
+
+    .topbar-left,
+    .topbar-right {
+
+        gap:
+            5px;
+
+    }
+
+
+    .topbar-title {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .topbar-subtitle {
+
+        display:
+            none;
+
+    }
+
+
+    .page-header {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            10px;
+
+        margin-bottom:
+            14px;
+
+    }
+
+
+    .page-title {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .page-subtitle {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .page-header-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            7px;
+
+    }
+
+
+    .page-header-actions .full-mobile {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+
+    .stats-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            8px;
+
+    }
+
+
+    .dashboard-grid,
+    .content-grid,
+    .class-grid,
+    .notes-grid,
+    .notification-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+
+    }
+
+
+    .student-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+
+    }
+
+
+    .theme-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            8px;
+
+    }
+
+
+    .three-columns {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .stat-card {
+
+        min-height:
+            98px;
+
+        padding:
+            11px;
+
+        border-radius:
+            15px;
+
+    }
+
+
+    .stat-icon {
+
+        width:
+            34px;
+
+        height:
+            34px;
+
+        min-width:
+            34px;
+
+        border-radius:
+            10px;
+
+    }
+
+
+    .stat-icon i,
+    .stat-icon svg {
+
+        font-size:
+            15px;
+
+        width:
+            15px;
+
+        height:
+            15px;
+
+    }
+
+
+    .stat-value {
+
+        font-size:
+            21px;
+
+        line-height:
+            1.2;
+
+    }
+
+
+    .stat-label {
+
+        font-size:
+            10px;
+
+        white-space:
+            nowrap;
+
+        overflow:
+            hidden;
+
+        text-overflow:
+            ellipsis;
+
+    }
+
+
+    .glass-card {
+
+        padding:
+            13px;
+
+        border-radius:
+            17px;
+
+    }
+
+
+    .card-header {
+
+        padding-bottom:
+            10px;
+
+        margin-bottom:
+            10px;
+
+    }
+
+
+    .card-title {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .card-description {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .section-title {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .section-subtitle {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .button,
+    button {
+
+        min-height:
+            40px;
+
+    }
+
+
+    .btn {
+
+        min-height:
+            40px;
+
+        padding:
+            8px
+            12px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .icon-button {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        min-width:
+            38px;
+
+    }
+
+
+    .search-box {
+
+        width:
+            100%;
+
+    }
+
+
+    .search-box input {
+
+        width:
+            100%;
+
+    }
+
+
+    .action-buttons {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            7px;
+
+    }
+
+
+    .action-buttons .full-mobile {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+
+    .student-card {
+
+        padding:
+            12px;
+
+    }
+
+
+    .student-avatar {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        min-width:
+            42px;
+
+    }
+
+
+    .student-name {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .student-meta {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .clock-container {
+
+        padding:
+            5px
+            8px;
+
+        border-radius:
+            11px;
+
+    }
+
+
+    .clock-time {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .clock-date {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .clock-period {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .notification-badge {
+
+        min-width:
+            16px;
+
+        height:
+            16px;
+
+        padding:
+            2px
+            4px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .modal {
+
+        width:
+            calc(
+                100vw - 20px
+            );
+
+        max-width:
+            none;
+
+        max-height:
+            calc(
+                100vh - 20px
+            );
+
+        border-radius:
+            19px;
+
+    }
+
+
+    .modal-header {
+
+        padding:
+            13px;
+
+    }
+
+
+    .modal-body {
+
+        padding:
+            13px;
+
+    }
+
+
+    .modal-footer {
+
+        padding:
+            11px;
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            7px;
+
+    }
+
+
+    .modal-footer button {
+
+        width:
+            100%;
+
+    }
+
+
+    .form-row {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .form-group {
+
+        width:
+            100%;
+
+    }
+
+
+    input,
+    select,
+    textarea {
+
+        font-size:
+            14px;
+
+        min-height:
+            42px;
+
+    }
+
+
+    textarea {
+
+        min-height:
+            100px;
+
+    }
+
+
+    .table-wrapper {
+
+        margin-inline:
+            -3px;
+
+        width:
+            calc(
+                100% + 6px
+            );
+
+        border-radius:
+            12px;
+
+    }
+
+
+    table {
+
+        min-width:
+            680px;
+
+        font-size:
+            11px;
+
+    }
+
+
+    th,
+    td {
+
+        padding:
+            9px
+            8px;
+
+    }
+
+
+    .pagination {
+
+        flex-wrap:
+            wrap;
+
+        justify-content:
+            center;
+
+        gap:
+            5px;
+
+    }
+
+
+    .pagination button {
+
+        width:
+            34px;
+
+        height:
+            34px;
+
+    }
+
+
+    .empty-state {
+
+        padding:
+            28px
+            12px;
+
+    }
+
+
+    .empty-state-icon {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+    }
+
+
+    .empty-state-title {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .empty-state-text {
+
+        font-size:
+            11px;
+
+    }
+
+}
+
+
+/* =========================================================
+   11. الهواتف الصغيرة جداً
+   أقل من 400px
+   ========================================================= */
+
+@media (max-width: 399px) {
+
+    html {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .main-content {
+
+        padding:
+            8px;
+
+    }
+
+
+    .topbar {
+
+        padding:
+            6px;
+
+    }
+
+
+    .topbar-title {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .mobile-menu-button {
+
+        width:
+            36px;
+
+        height:
+            36px;
+
+    }
+
+
+    .topbar-actions {
+
+        gap:
+            4px;
+
+    }
+
+
+    .page-title {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .page-header-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .page-header-actions .full-mobile {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .stats-grid {
+
+        gap:
+            6px;
+
+    }
+
+
+    .stat-card {
+
+        min-height:
+            90px;
+
+        padding:
+            9px;
+
+    }
+
+
+    .stat-icon {
+
+        width:
+            30px;
+
+        height:
+            30px;
+
+        min-width:
+            30px;
+
+    }
+
+
+    .stat-value {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .stat-label {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .glass-card {
+
+        padding:
+            11px;
+
+        border-radius:
+            15px;
+
+    }
+
+
+    .theme-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .action-buttons {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .modal-footer {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .clock-container {
+
+        display:
+            none;
+
+    }
+
+
+    .sidebar {
+
+        width:
+            88vw;
+
+    }
+
+}
+
+
+/* =========================================================
+   12. الوضع الأفقي للهاتف
+   ========================================================= */
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+    .sidebar {
+
+        width:
+            280px;
+
+    }
+
+
+    .main-content {
+
+        padding:
+            10px
+            14px;
+
+    }
+
+
+    .topbar {
+
+        min-height:
+            54px;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .student-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .theme-grid {
+
+        grid-template-columns:
+
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .modal {
+
+        max-height:
+            calc(
+                100vh - 12px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   13. منع خروج النص من البطاقات
+   ========================================================= */
+
+.glass-card,
+.stat-card,
+.student-card,
+.class-card,
+.notification-card,
+.note-card,
+.theme-card {
+
+    min-width:
+        0;
+
+    overflow:
+        hidden;
+
+}
+
+
+.glass-card *,
+.stat-card *,
+.student-card *,
+.class-card *,
+.notification-card *,
+.note-card *,
+.theme-card * {
+
+    max-width:
+        100%;
+
+}
+
+
+.text-truncate {
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.text-break {
+
+    overflow-wrap:
+        anywhere;
+
+    word-break:
+        break-word;
+
+}
+
+
+/* =========================================================
+   14. الصور في البطاقات
+   ========================================================= */
+
+.card-image {
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    object-fit:
+        cover;
+
+}
+
+
+.profile-image {
+
+    width:
+        clamp(
+            42px,
+            8vw,
+            80px
+        );
+
+    height:
+        clamp(
+            42px,
+            8vw,
+            80px
+        );
+
+    object-fit:
+        cover;
+
+}
+
+
+/* =========================================================
+   15. شريط التنقل السفلي للهاتف
+   ========================================================= */
+
+.mobile-bottom-nav {
+
+    display:
+        none;
+
+}
+
+
+@media (max-width: 767px) {
+
+    .mobile-bottom-nav {
+
+        position:
+            fixed;
+
+        z-index:
+            8000;
+
+        right:
+            8px;
+
+        bottom:
+            8px;
+
+        left:
+            8px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            space-around;
+
+        min-height:
+            60px;
+
+        padding:
+            7px;
+
+        border:
+
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                0.1
+            );
+
+        border-radius:
+            19px;
+
+        background:
+
+            rgba(
+                15,
+                15,
+                22,
+                0.72
+            );
+
+        backdrop-filter:
+            blur(20px)
+            saturate(140%);
+
+        -webkit-backdrop-filter:
+            blur(20px)
+            saturate(140%);
+
+        box-shadow:
+
+            0 15px 45px
+            rgba(
+                0,
+                0,
+                0,
+                0.3
+            );
+
+    }
+
+
+    .mobile-bottom-nav-item {
+
+        display:
+            flex;
+
+        flex:
+            1;
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        min-width:
+            48px;
+
+        min-height:
+            46px;
+
+        gap:
+            3px;
+
+        color:
+            var(--text-muted);
+
+        text-decoration:
+            none;
+
+        border-radius:
+            13px;
+
+        transition:
+
+            color
+            0.25s
+            ease,
+
+            background
+            0.25s
+            ease,
+
+            transform
+            0.25s
+            ease;
+
+    }
+
+
+    .mobile-bottom-nav-item i,
+    .mobile-bottom-nav-item svg {
+
+        width:
+            19px;
+
+        height:
+            19px;
+
+        font-size:
+            18px;
+
+    }
+
+
+    .mobile-bottom-nav-item span {
+
+        font-size:
+            9px;
+
+        line-height:
+            1;
+
+        white-space:
+            nowrap;
+
+    }
+
+
+    .mobile-bottom-nav-item.active {
+
+        color:
+            var(--primary);
+
+        background:
+
+            rgba(
+                var(--primary-rgb),
+                0.1
+            );
+
+        transform:
+            translateY(-2px);
+
+    }
+
+
+    .main-content {
+
+        padding-bottom:
+            82px;
+
+    }
+
+}
+
+
+/* =========================================================
+   16. إخفاء عناصر سطح المكتب على الهاتف
+   ========================================================= */
+
+.desktop-only {
+
+    display:
+        block;
+
+}
+
+
+.mobile-only {
+
+    display:
+        none;
+
+}
+
+
+@media (max-width: 767px) {
+
+    .desktop-only {
+
+        display:
+            none !important;
+
+    }
+
+
+    .mobile-only {
+
+        display:
+            block;
+
+    }
+
+
+    .mobile-only-flex {
+
+        display:
+            flex;
+
+    }
+
+
+    .mobile-only-grid {
+
+        display:
+            grid;
+
+    }
+
+}
+
+
+/* =========================================================
+   17. تحسين النوافذ المنبثقة
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .modal-overlay {
+
+        padding:
+            8px;
+
+        align-items:
+            center;
+
+    }
+
+
+    .modal-content {
+
+        width:
+            100%;
+
+        max-width:
+            100%;
+
+        max-height:
+            94vh;
+
+        overflow-y:
+            auto;
+
+        -webkit-overflow-scrolling:
+            touch;
+
+    }
+
+
+    .modal-large,
+    .modal-xl {
+
+        width:
+            100%;
+
+        max-width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   18. بطاقات المعلومات في الصفحة الرئيسية
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .dashboard-stat-row {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            8px;
+
+    }
+
+
+    .dashboard-stat-row > * {
+
+        min-width:
+            0;
+
+    }
+
+}
+
+
+@media (max-width: 399px) {
+
+    .dashboard-stat-row {
+
+        gap:
+            6px;
+
+    }
+
+}
+
+
+/* =========================================================
+   19. قسم الطلاب
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .students-toolbar {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            8px;
+
+    }
+
+
+    .students-toolbar > * {
+
+        width:
+            100%;
+
+    }
+
+
+    .student-filters {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            7px;
+
+    }
+
+
+    .student-details-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (max-width: 399px) {
+
+    .student-filters {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   20. قسم الحضور
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .attendance-toolbar {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            7px;
+
+    }
+
+
+    .attendance-toolbar .full-mobile {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+
+    .attendance-summary {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap:
+            7px;
+
+    }
+
+
+    .attendance-status-buttons {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap:
+            6px;
+
+    }
+
+}
+
+
+@media (max-width: 399px) {
+
+    .attendance-toolbar {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .attendance-toolbar .full-mobile {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .attendance-summary {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .attendance-status-buttons {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   21. قسم الدرجات
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .grades-toolbar {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        gap:
+            8px;
+
+    }
+
+
+    .grade-formula {
+
+        overflow-x:
+            auto;
+
+        white-space:
+            nowrap;
+
+        -webkit-overflow-scrolling:
+            touch;
+
+    }
+
+
+    .formula-builder {
+
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            6px;
+
+    }
+
+
+    .formula-button {
+
+        min-width:
+            40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   22. قسم الجدول الدراسي
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .schedule-wrapper {
+
+        overflow-x:
+            auto;
+
+        -webkit-overflow-scrolling:
+            touch;
+
+    }
+
+
+    .schedule-grid {
+
+        min-width:
+            700px;
+
+    }
+
+
+    .schedule-day {
+
+        min-width:
+            110px;
+
+    }
+
+}
+
+
+/* =========================================================
+   23. قسم الثيمات
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .themes-container {
+
+        width:
+            100%;
+
+    }
+
+
+    .theme-card {
+
+        min-height:
+            105px;
+
+    }
+
+
+    .theme-preview {
+
+        height:
+            62px;
+
+    }
+
+
+    .theme-name {
+
+        font-size:
+            11px;
+
+    }
+
+}
+
+
+/* =========================================================
+   24. قسم الملاحظات والتنبيهات
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .note-card,
+    .notification-card {
+
+        padding:
+            12px;
+
+    }
+
+
+    .note-card-header,
+    .notification-card-header {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .note-card-actions,
+    .notification-card-actions {
+
+        flex-shrink:
+            0;
+
+    }
+
+
+    .note-card-content,
+    .notification-card-content {
+
+        overflow-wrap:
+            anywhere;
+
+    }
+
+}
+
+
+/* =========================================================
+   25. قسم التواصل
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .contact-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            9px;
+
+    }
+
+
+    .contact-card {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   26. قسم المراسلة
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .message-form {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        gap:
+            9px;
+
+    }
+
+
+    .message-type-grid {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            7px;
+
+    }
+
+
+    .message-preview {
+
+        overflow:
+            hidden;
+
+        word-break:
+            break-word;
+
+    }
+
+}
+
+
+/* =========================================================
+   27. قسم البيانات وتصدير الطالب
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .data-search {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        gap:
+            8px;
+
+    }
+
+
+    .data-filters {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            7px;
+
+    }
+
+
+    .export-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            7px;
+
+    }
+
+}
+
+
+@media (max-width: 399px) {
+
+    .data-filters {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   28. أزرار صغيرة
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .btn-sm {
+
+        min-height:
+            34px;
+
+        padding:
+            6px
+            9px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .btn-icon {
+
+        width:
+            34px;
+
+        height:
+            34px;
+
+        min-width:
+            34px;
+
+    }
+
+}
+
+
+/* =========================================================
+   29. تحسين الـ Dropdown
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .dropdown-menu {
+
+        position:
+            fixed !important;
+
+        right:
+            10px !important;
+
+        left:
+            10px !important;
+
+        width:
+            auto !important;
+
+        max-width:
+            none !important;
+
+        max-height:
+            70vh;
+
+        overflow-y:
+            auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   30. تحسين حقول البحث
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+    .search-container {
+
+        width:
+            100%;
+
+    }
+
+
+    .search-input {
+
+        width:
+            100%;
+
+        height:
+            42px;
+
+    }
+
+
+    .search-icon {
+
+        width:
+            38px;
+
+    }
+
+}
+
+
+/* =========================================================
+   31. منع تكسر الأيقونات
+   ========================================================= */
+
+.icon,
+.icon-button,
+.stat-icon,
+.nav-icon {
+
+    flex-shrink:
+        0;
+
+}
+
+
+/* =========================================================
+   32. Safe Area لأجهزة الهاتف
+   ========================================================= */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+
+    .mobile-bottom-nav {
+
+        bottom:
+            calc(
+                8px +
+                env(
+                    safe-area-inset-bottom
+                )
+            );
+
+    }
+
+
+    .main-content {
+
+        padding-bottom:
+
+            calc(
+                82px +
+                env(
+                    safe-area-inset-bottom
+                )
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   33. الشاشات ذات الارتفاع القليل
+   ========================================================= */
+
+@media (max-height: 650px) {
+
+    .sidebar-header {
+
+        padding-top:
+            12px;
+
+        padding-bottom:
+            12px;
+
+    }
+
+
+    .sidebar-nav-item {
+
+        padding-top:
+            8px;
+
+        padding-bottom:
+            8px;
+
+    }
+
+
+    .modal-content {
+
+        max-height:
+            94vh;
+
+    }
+
+
+    .loader-logo {
+
+        max-width:
+            100px;
+
+    }
+
+}
+
+
+/* =========================================================
+   34. أجهزة اللمس
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    button,
+    a,
+    .clickable,
+    .nav-item,
+    .student-card,
+    .theme-card {
+
+        -webkit-tap-highlight-color:
+            transparent;
+
+    }
+
+
+    button,
+    .btn,
+    .nav-item,
+    .student-card,
+    .theme-card {
+
+        touch-action:
+            manipulation;
+
+    }
+
+
+    .hover-only {
+
+        display:
+            none !important;
+
+    }
+
+
+    .desktop-hover-effect:hover {
+
+        transform:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   35. تحسين التمرير على الهاتف
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .scroll-container {
+
+        overflow-x:
+            auto;
+
+        overflow-y:
+            hidden;
+
+        scrollbar-width:
+            thin;
+
+        -webkit-overflow-scrolling:
+            touch;
+
+    }
+
+
+    .vertical-scroll {
+
+        overflow-y:
+            auto;
+
+        -webkit-overflow-scrolling:
+            touch;
+
+    }
+
+}
+
+
+/* =========================================================
+   36. شاشات Retina
+   ========================================================= */
+
+@media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+
+    .glass-card,
+    .stat-card,
+    .student-card {
+
+        -webkit-font-smoothing:
+            antialiased;
+
+    }
+
+}
+
+
+/* =========================================================
+   37. الطباعة
+   ========================================================= */
+
+@media print {
+
+    body {
+
+        background:
+            white !important;
+
+        color:
+            black !important;
+
+    }
+
+
+    .sidebar,
+    .topbar,
+    .mobile-bottom-nav,
+    .mobile-menu-button,
+    .no-print,
+    button {
+
+        display:
+            none !important;
+
+    }
+
+
+    .main-content {
+
+        width:
+            100% !important;
+
+        margin:
+            0 !important;
+
+        padding:
+            0 !important;
+
+    }
+
+
+    .glass-card,
+    .stat-card,
+    .student-card {
+
+        background:
+            white !important;
+
+        color:
+            black !important;
+
+        border:
+            1px solid
+            #ccc !important;
+
+        box-shadow:
+            none !important;
+
+        backdrop-filter:
+            none !important;
+
+        -webkit-backdrop-filter:
+            none !important;
+
+        break-inside:
+            avoid;
+
+    }
+
+
+    table {
+
+        color:
+            black !important;
+
+    }
+
+
+    th,
+    td {
+
+        color:
+            black !important;
+
+        border-color:
+            #ccc !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   38. توافق الوضع الرأسي
+   ========================================================= */
+
+@media (max-width: 767px) and (orientation: portrait) {
+
+    .portrait-stack {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .portrait-full {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   39. أدوات Responsive مساعدة
+   ========================================================= */
+
+.w-100-mobile {
+
+    width:
+        auto;
+
+}
+
+
+@media (max-width: 767px) {
+
+    .w-100-mobile {
+
+        width:
+            100% !important;
+
+    }
+
+
+    .flex-mobile-column {
+
+        flex-direction:
+            column !important;
+
+    }
+
+
+    .text-center-mobile {
+
+        text-align:
+            center !important;
+
+    }
+
+
+    .justify-center-mobile {
+
+        justify-content:
+            center !important;
+
+    }
+
+
+    .align-center-mobile {
+
+        align-items:
+            center !important;
+
+    }
+
+
+    .gap-mobile-small {
+
+        gap:
+            6px !important;
+
+    }
+
+
+    .gap-mobile-normal {
+
+        gap:
+            10px !important;
+
+    }
+
+
+    .hide-mobile {
+
+        display:
+            none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   40. تحسين الأداء في الأجهزة الضعيفة
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .background-particles {
+
+        pointer-events:
+            none;
+
+    }
+
+
+    .heavy-blur {
+
+        backdrop-filter:
+            blur(10px);
+
+        -webkit-backdrop-filter:
+            blur(10px);
+
+    }
+
+
+    .complex-shadow {
+
+        box-shadow:
+
+            0 8px 25px
+            rgba(
+                0,
+                0,
+                0,
+                0.18
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   نهاية الملف
+   ========================================================= */

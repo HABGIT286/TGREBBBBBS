@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- =========================================================
+         TEACHER PRO
+         الملف الرئيسي للتطبيق
+         ========================================================= -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080b12"
+    >
+
+    <meta
+        name="description"
+        content="TEACHER PRO - نظام ذكي لإدارة الطلاب والحضور والدرجات والصفوف"
+    >
+
+    <title>TEACHER PRO</title>
+
+
+    <!-- =========================================================
+         الخطوط
+         ========================================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cairo:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         ملفات CSS
+         ========================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="css/main.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/glass.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/animations.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/themes.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body class="theme-red-green">
+
+
+<!-- =============================================================
+     خلفية الموقع
+     ============================================================= -->
+
+<div
+    id="siteBackground"
+    class="site-background"
+>
+
+    <div class="background-image"></div>
+
+    <div class="background-overlay"></div>
+
+    <div class="background-gradient"></div>
+
+    <div class="background-grid"></div>
+
+    <div class="background-light light-one"></div>
+
+    <div class="background-light light-two"></div>
+
+    <div class="background-light light-three"></div>
+
+</div>
+
+
+
+<!-- =============================================================
+     شاشة التحميل
+     ============================================================= -->
+
+<div
+    id="loader"
+    class="loader-screen"
+>
+
+
+    <!-- جسيمات -->
+
+    <div class="loader-particles">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+
+    <div class="loader-content">
+
+
+        <!-- دوائر الشعار -->
+
+        <div class="loader-logo-system">
+
+
+            <div class="loader-ring ring-1"></div>
+
+            <div class="loader-ring ring-2"></div>
+
+            <div class="loader-ring ring-3"></div>
+
+
+            <div class="loader-logo-box">
+
+                <img
+                    src="images/AA.jpg"
+                    alt="TEACHER PRO"
+                    onerror="this.style.display='none'"
+                >
+
+                <div class="loader-logo-fallback">
+                    TP
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- اسم الموقع -->
+
+        <div class="loader-brand">
+
+            <h1>
+                TEACHER
+                <span>PRO</span>
+            </h1>
+
+            <p>
+                النظام الذكي لإدارة العملية التعليمية
+            </p>
+
+        </div>
+
+
+
+        <!-- حالة التحميل -->
+
+        <div class="loader-status">
+
+            <span
+                id="loadingStatus"
+            >
+                جاري تشغيل النظام...
+            </span>
+
+        </div>
+
+
+
+        <!-- شريط التحميل -->
+
+        <div class="loading-area">
+
+
+            <div class="loading-track">
+
+                <div
+                    id="loadingProgress"
+                    class="loading-progress"
+                ></div>
+
+            </div>
+
+
+            <div class="loading-footer">
+
+                <span>
+                    جاري التجهيز
+                </span>
+
+
+                <strong
+                    id="loadingPercent"
+                >
+                    0%
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- IndexedDB -->
+
+        <div class="loader-db-status">
+
+            <span class="pulse-dot"></span>
+
+            <span
+                id="loaderDatabaseStatus"
+            >
+                جاري الاتصال بقاعدة البيانات المحلية
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =============================================================
+     التطبيق الرئيسي
+     ============================================================= -->
+
+<div
+    id="app"
+    class="app hidden"
+>
+
+
+    <!-- =========================================================
+         الشريط العلوي
+         ========================================================= -->
+
+    <header
+        class="topbar"
+    >
+
+
+        <!-- زر القائمة للهاتف -->
+
+        <button
+            id="mobileMenuButton"
+            class="mobile-menu-button"
+            type="button"
+            aria-label="فتح القائمة"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- شعار الموقع -->
+
+        <div class="top-brand">
+
+
+            <div class="top-brand-image">
+
+                <img
+                    src="images/AA.jpg"
+                    alt="TEACHER PRO"
+                    onerror="this.style.display='none'"
+                >
+
+                <span class="brand-fallback">
+                    TP
+                </span>
+
+            </div>
+
+
+
+            <div class="top-brand-information">
+
+                <h1>
+                    TEACHER
+                    <span>PRO</span>
+                </h1>
+
+                <p>
+                    لوحة الإدارة التعليمية
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- الساعة -->
+
+        <div
+            class="top-clock-area"
+        >
+
+
+            <div class="top-clock-card">
+
+
+                <div class="clock-symbol">
+
+                    ⏱
+
+                </div>
+
+
+
+                <div class="clock-details">
+
+
+                    <div
+                        id="liveClock"
+                        class="live-clock"
+                    >
+                        --:--:-- --
+                    </div>
+
+
+                    <div
+                        id="liveDate"
+                        class="live-date"
+                    >
+                        ----/--/--
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- الإجراءات -->
+
+        <div
+            class="top-actions"
+        >
+
+
+            <!-- الملاحظات -->
+
+            <button
+                class="top-action-button"
+                type="button"
+                data-section-target="notes"
+                title="ملاحظاتي"
+            >
+
+                <span>
+                    📌
+                </span>
+
+            </button>
+
+
+
+            <!-- التنبيهات -->
+
+            <button
+                id="quickNotificationButton"
+                class="top-action-button notification-button"
+                type="button"
+                data-section-target="notifications"
+                title="التنبيهات"
+            >
+
+                <span>
+                    🔔
+                </span>
+
+
+                <strong
+                    id="notificationBadge"
+                    class="notification-badge hidden"
+                >
+                    0
+                </strong>
+
+            </button>
+
+
+
+            <!-- الثيم -->
+
+            <button
+                class="top-action-button"
+                type="button"
+                data-section-target="themes"
+                title="الثيمات"
+            >
+
+                <span>
+                    🎨
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================================================
+         جسم التطبيق
+         ========================================================= -->
+
+    <div
+        class="app-shell"
+    >
+
+
+
+        <!-- =====================================================
+             القائمة الجانبية
+             ===================================================== -->
+
+        <aside
+            id="sidebar"
+            class="sidebar"
+        >
+
+
+            <!-- معلومات المدرس -->
+
+            <div
+                class="sidebar-user"
+            >
+
+
+                <div class="sidebar-user-image">
+
+                    <img
+                        src="images/AA.jpg"
+                        alt="Teacher"
+                        onerror="this.style.display='none'"
+                    >
+
+                    <span>
+                        👨‍🏫
+                    </span>
+
+                </div>
+
+
+
+                <div
+                    class="sidebar-user-info"
+                >
+
+                    <strong
+                        id="sidebarTeacherName"
+                    >
+                        المدرس
+                    </strong>
+
+
+                    <small>
+                        لوحة الإدارة
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- القائمة -->
+
+            <nav
+                id="mainNavigation"
+                class="main-navigation"
+            >
+
+
+                <!-- الرئيسية -->
+
+                <button
+                    class="nav-item active"
+                    type="button"
+                    data-section="dashboard"
+                >
+
+                    <span class="nav-icon">
+                        🏠
+                    </span>
+
+                    <span class="nav-text">
+                        الصفحة الرئيسية
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الطلاب -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="students"
+                >
+
+                    <span class="nav-icon">
+                        👨‍🎓
+                    </span>
+
+                    <span class="nav-text">
+                        الطلاب
+                    </span>
+
+                    <strong
+                        id="studentsNavCount"
+                        class="nav-count"
+                    >
+                        0
+                    </strong>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الصفوف -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="classes"
+                >
+
+                    <span class="nav-icon">
+                        🏫
+                    </span>
+
+                    <span class="nav-text">
+                        الصفوف
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الحضور -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="attendance"
+                >
+
+                    <span class="nav-icon">
+                        ✅
+                    </span>
+
+                    <span class="nav-text">
+                        الحضور
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الدرجات -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="grades"
+                >
+
+                    <span class="nav-icon">
+                        📊
+                    </span>
+
+                    <span class="nav-text">
+                        الدرجات
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الواجبات -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="assignments"
+                >
+
+                    <span class="nav-icon">
+                        📝
+                    </span>
+
+                    <span class="nav-text">
+                        الواجبات
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الامتحانات -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="exams"
+                >
+
+                    <span class="nav-icon">
+                        🧪
+                    </span>
+
+                    <span class="nav-text">
+                        الامتحانات
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الجدول -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="schedule"
+                >
+
+                    <span class="nav-icon">
+                        📅
+                    </span>
+
+                    <span class="nav-text">
+                        الجدول
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الملاحظات -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="notes"
+                >
+
+                    <span class="nav-icon">
+                        📌
+                    </span>
+
+                    <span class="nav-text">
+                        ملاحظاتي
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- التنبيهات -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="notifications"
+                >
+
+                    <span class="nav-icon">
+                        🔔
+                    </span>
+
+                    <span class="nav-text">
+                        التنبيهات
+                    </span>
+
+                    <strong
+                        id="sidebarNotificationBadge"
+                        class="nav-count hidden"
+                    >
+                        0
+                    </strong>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- البيانات -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="data"
+                >
+
+                    <span class="nav-icon">
+                        🗂️
+                    </span>
+
+                    <span class="nav-text">
+                        البيانات
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- النسخ -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="backup"
+                >
+
+                    <span class="nav-icon">
+                        💾
+                    </span>
+
+                    <span class="nav-text">
+                        النسخ
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الإعدادات -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="settings"
+                >
+
+                    <span class="nav-icon">
+                        ⚙️
+                    </span>
+
+                    <span class="nav-text">
+                        الإعدادات
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- الثيمات -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="themes"
+                >
+
+                    <span class="nav-icon">
+                        🎨
+                    </span>
+
+                    <span class="nav-text">
+                        الثيمات
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- التواصل -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="contact"
+                >
+
+                    <span class="nav-icon">
+                        📞
+                    </span>
+
+                    <span class="nav-text">
+                        التواصل
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+
+                <!-- المراسلة -->
+
+                <button
+                    class="nav-item"
+                    type="button"
+                    data-section="messages"
+                >
+
+                    <span class="nav-icon">
+                        💬
+                    </span>
+
+                    <span class="nav-text">
+                        المراسلة
+                    </span>
+
+                    <span class="nav-effect"></span>
+
+                </button>
+
+
+            </nav>
+
+
+
+            <!-- أسفل القائمة -->
+
+            <div
+                class="sidebar-footer"
+            >
+
+
+                <div
+                    class="database-indicator"
+                >
+
+                    <span
+                        class="database-pulse"
+                    ></span>
+
+
+                    <div>
+
+                        <strong>
+                            قاعدة البيانات
+                        </strong>
+
+
+                        <small
+                            id="databaseStatus"
+                        >
+                            IndexedDB
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="sidebar-version">
+
+                    <span>
+                        TEACHER PRO
+                    </span>
+
+                    <small>
+                        v1.0.0
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             المحتوى الرئيسي
+             ===================================================== -->
+
+        <main
+            id="mainContent"
+            class="main-content"
+        >
+
+
+
+            <!-- =================================================
+                 الصفحة الرئيسية
+                 ================================================= -->
+
+            <section
+                id="dashboard"
+                class="page-section active"
+            >
+
+                <div
+                    id="dashboardContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الطلاب
+                 ================================================= -->
+
+            <section
+                id="students"
+                class="page-section"
+            >
+
+                <div
+                    id="studentsContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الصفوف
+                 ================================================= -->
+
+            <section
+                id="classes"
+                class="page-section"
+            >
+
+                <div
+                    id="classesContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الحضور
+                 ================================================= -->
+
+            <section
+                id="attendance"
+                class="page-section"
+            >
+
+                <div
+                    id="attendanceContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الدرجات
+                 ================================================= -->
+
+            <section
+                id="grades"
+                class="page-section"
+            >
+
+                <div
+                    id="gradesContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الواجبات
+                 ================================================= -->
+
+            <section
+                id="assignments"
+                class="page-section"
+            >
+
+                <div
+                    id="assignmentsContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الامتحانات
+                 ================================================= -->
+
+            <section
+                id="exams"
+                class="page-section"
+            >
+
+                <div
+                    id="examsContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الجدول
+                 ================================================= -->
+
+            <section
+                id="schedule"
+                class="page-section"
+            >
+
+                <div
+                    id="scheduleContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الملاحظات
+                 ================================================= -->
+
+            <section
+                id="notes"
+                class="page-section"
+            >
+
+                <div
+                    id="notesContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 التنبيهات
+                 ================================================= -->
+
+            <section
+                id="notifications"
+                class="page-section"
+            >
+
+                <div
+                    id="notificationsContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 البيانات
+                 ================================================= -->
+
+            <section
+                id="data"
+                class="page-section"
+            >
+
+                <div
+                    id="dataContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 النسخ الاحتياطي
+                 ================================================= -->
+
+            <section
+                id="backup"
+                class="page-section"
+            >
+
+                <div
+                    id="backupContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الإعدادات
+                 ================================================= -->
+
+            <section
+                id="settings"
+                class="page-section"
+            >
+
+                <div
+                    id="settingsContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 الثيمات
+                 ================================================= -->
+
+            <section
+                id="themes"
+                class="page-section"
+            >
+
+                <div
+                    id="themesContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 التواصل
+                 ================================================= -->
+
+            <section
+                id="contact"
+                class="page-section"
+            >
+
+                <div
+                    id="contactContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 المراسلة
+                 ================================================= -->
+
+            <section
+                id="messages"
+                class="page-section"
+            >
+
+                <div
+                    id="messagesContent"
+                    class="section-content"
+                ></div>
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =============================================================
+     طبقة تغطية الهاتف
+     ============================================================= -->
+
+<div
+    id="mobileOverlay"
+    class="mobile-overlay"
+></div>
+
+
+
+<!-- =============================================================
+     حاوية النوافذ
+     ============================================================= -->
+
+<div
+    id="modalContainer"
+    class="modal-container"
+></div>
+
+
+
+<!-- =============================================================
+     حاوية التأكيد
+     ============================================================= -->
+
+<div
+    id="confirmContainer"
+    class="confirm-container"
+></div>
+
+
+
+<!-- =============================================================
+     حاوية الإشعارات
+     ============================================================= -->
+
+<div
+    id="toastContainer"
+    class="toast-container"
+></div>
+
+
+
+<!-- =============================================================
+     تأثير الانتقال
+     ============================================================= -->
+
+<div
+    id="pageTransition"
+    class="page-transition"
+></div>
+
+
+
+<!-- =============================================================
+     طبقة تأثير النقر
+     ============================================================= -->
+
+<div
+    id="clickEffects"
+    class="click-effects"
+></div>
+
+
+
+<!-- =============================================================
+     ملفات JavaScript
+     ============================================================= -->
+
+
+<!-- قاعدة البيانات IndexedDB -->
+
+<script src="js/database.js"></script>
+
+
+<!-- الأدوات العامة -->
+
+<script src="js/data.js"></script>
+
+
+<!-- أقسام الموقع -->
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/students.js"></script>
+
+<script src="js/classes.js"></script>
+
+<script src="js/attendance.js"></script>
+
+<script src="js/grades.js"></script>
+
+<script src="js/assignments.js"></script>
+
+<script src="js/exams.js"></script>
+
+<script src="js/schedule.js"></script>
+
+<script src="js/notes.js"></script>
+
+<script src="js/notifications.js"></script>
+
+<script src="js/themes.js"></script>
+
+<script src="js/settings.js"></script>
+
+<script src="js/backup.js"></script>
+
+<script src="js/contact.js"></script>
+
+<script src="js/messages.js"></script>
+
+
+<!-- التطبيق الرئيسي -->
+
+<script src="js/app.js"></script>
+
+
+</body>
+</html>
