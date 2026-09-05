@@ -4,6 +4,7 @@
     <!-- =========================================================
          TEACHER PRO
          الملف الرئيسي للتطبيق
+         الإصدار: 1.0.0
          ========================================================= -->
 
     <meta charset="UTF-8">
@@ -21,6 +22,26 @@
     <meta
         name="description"
         content="TEACHER PRO - نظام ذكي لإدارة الطلاب والحضور والدرجات والصفوف"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="TEACHER PRO"
     >
 
     <title>TEACHER PRO</title>
@@ -49,31 +70,40 @@
 
     <!-- =========================================================
          ملفات CSS
+         
+         ملاحظة:
+         جميع ملفات CSS موجودة في Root بجانب index.html
+         لذلك لا نستخدم css/
          ========================================================= -->
 
     <link
         rel="stylesheet"
-        href="css/main.css"
+        href="./main.css"
     >
 
     <link
         rel="stylesheet"
-        href="css/glass.css"
+        href="./components.css"
     >
 
     <link
         rel="stylesheet"
-        href="css/animations.css"
+        href="./glass.css"
     >
 
     <link
         rel="stylesheet"
-        href="css/themes.css"
+        href="./animations.css"
     >
 
     <link
         rel="stylesheet"
-        href="css/responsive.css"
+        href="./themes.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./responsive.css"
     >
 
 </head>
@@ -119,7 +149,9 @@
 >
 
 
-    <!-- جسيمات -->
+    <!-- =========================================================
+         جسيمات شاشة التحميل
+         ========================================================= -->
 
     <div class="loader-particles">
 
@@ -136,10 +168,16 @@
 
 
 
+    <!-- =========================================================
+         محتوى شاشة التحميل
+         ========================================================= -->
+
     <div class="loader-content">
 
 
-        <!-- دوائر الشعار -->
+        <!-- =====================================================
+             نظام شعار التحميل
+             ===================================================== -->
 
         <div class="loader-logo-system">
 
@@ -153,13 +191,17 @@
 
             <div class="loader-logo-box">
 
+                <!-- الصورة موجودة في Root -->
                 <img
-                    src="images/AA.jpg"
+                    src="./AA.jpg"
                     alt="TEACHER PRO"
-                    onerror="this.style.display='none'"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                 >
 
-                <div class="loader-logo-fallback">
+                <div
+                    class="loader-logo-fallback"
+                    style="display:none;"
+                >
                     TP
                 </div>
 
@@ -170,7 +212,9 @@
 
 
 
-        <!-- اسم الموقع -->
+        <!-- =====================================================
+             اسم الموقع
+             ===================================================== -->
 
         <div class="loader-brand">
 
@@ -187,13 +231,13 @@
 
 
 
-        <!-- حالة التحميل -->
+        <!-- =====================================================
+             حالة التحميل
+             ===================================================== -->
 
         <div class="loader-status">
 
-            <span
-                id="loadingStatus"
-            >
+            <span id="loadingStatus">
                 جاري تشغيل النظام...
             </span>
 
@@ -201,7 +245,9 @@
 
 
 
-        <!-- شريط التحميل -->
+        <!-- =====================================================
+             شريط التحميل
+             ===================================================== -->
 
         <div class="loading-area">
 
@@ -211,6 +257,7 @@
                 <div
                     id="loadingProgress"
                     class="loading-progress"
+                    style="width:0%;"
                 ></div>
 
             </div>
@@ -223,9 +270,7 @@
                 </span>
 
 
-                <strong
-                    id="loadingPercent"
-                >
+                <strong id="loadingPercent">
                     0%
                 </strong>
 
@@ -236,15 +281,15 @@
 
 
 
-        <!-- IndexedDB -->
+        <!-- =====================================================
+             حالة IndexedDB
+             ===================================================== -->
 
         <div class="loader-db-status">
 
             <span class="pulse-dot"></span>
 
-            <span
-                id="loaderDatabaseStatus"
-            >
+            <span id="loaderDatabaseStatus">
                 جاري الاتصال بقاعدة البيانات المحلية
             </span>
 
@@ -272,12 +317,12 @@
          الشريط العلوي
          ========================================================= -->
 
-    <header
-        class="topbar"
-    >
+    <header class="topbar">
 
 
-        <!-- زر القائمة للهاتف -->
+        <!-- =====================================================
+             زر القائمة للهاتف
+             ===================================================== -->
 
         <button
             id="mobileMenuButton"
@@ -294,7 +339,9 @@
 
 
 
-        <!-- شعار الموقع -->
+        <!-- =====================================================
+             شعار الموقع
+             ===================================================== -->
 
         <div class="top-brand">
 
@@ -302,12 +349,15 @@
             <div class="top-brand-image">
 
                 <img
-                    src="images/AA.jpg"
+                    src="./AA.jpg"
                     alt="TEACHER PRO"
-                    onerror="this.style.display='none'"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                 >
 
-                <span class="brand-fallback">
+                <span
+                    class="brand-fallback"
+                    style="display:none;"
+                >
                     TP
                 </span>
 
@@ -333,20 +383,18 @@
 
 
 
-        <!-- الساعة -->
+        <!-- =====================================================
+             الساعة
+             ===================================================== -->
 
-        <div
-            class="top-clock-area"
-        >
+        <div class="top-clock-area">
 
 
             <div class="top-clock-card">
 
 
                 <div class="clock-symbol">
-
                     ⏱
-
                 </div>
 
 
@@ -380,11 +428,11 @@
 
 
 
-        <!-- الإجراءات -->
+        <!-- =====================================================
+             الإجراءات السريعة
+             ===================================================== -->
 
-        <div
-            class="top-actions"
-        >
+        <div class="top-actions">
 
 
             <!-- الملاحظات -->
@@ -430,7 +478,7 @@
 
 
 
-            <!-- الثيم -->
+            <!-- الثيمات -->
 
             <button
                 class="top-action-button"
@@ -457,9 +505,7 @@
          جسم التطبيق
          ========================================================= -->
 
-    <div
-        class="app-shell"
-    >
+    <div class="app-shell">
 
 
 
@@ -473,22 +519,24 @@
         >
 
 
-            <!-- معلومات المدرس -->
+            <!-- =================================================
+                 معلومات المدرس
+                 ================================================= -->
 
-            <div
-                class="sidebar-user"
-            >
+            <div class="sidebar-user">
 
 
                 <div class="sidebar-user-image">
 
                     <img
-                        src="images/AA.jpg"
+                        src="./AA.jpg"
                         alt="Teacher"
-                        onerror="this.style.display='none'"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                     >
 
-                    <span>
+                    <span
+                        style="display:none;"
+                    >
                         👨‍🏫
                     </span>
 
@@ -496,13 +544,9 @@
 
 
 
-                <div
-                    class="sidebar-user-info"
-                >
+                <div class="sidebar-user-info">
 
-                    <strong
-                        id="sidebarTeacherName"
-                    >
+                    <strong id="sidebarTeacherName">
                         المدرس
                     </strong>
 
@@ -518,7 +562,9 @@
 
 
 
-            <!-- القائمة -->
+            <!-- =================================================
+                 القائمة الرئيسية
+                 ================================================= -->
 
             <nav
                 id="mainNavigation"
@@ -782,7 +828,7 @@
 
 
 
-                <!-- النسخ -->
+                <!-- النسخ الاحتياطي -->
 
                 <button
                     class="nav-item"
@@ -895,20 +941,16 @@
 
 
 
-            <!-- أسفل القائمة -->
+            <!-- =================================================
+                 أسفل القائمة
+                 ================================================= -->
 
-            <div
-                class="sidebar-footer"
-            >
+            <div class="sidebar-footer">
 
 
-                <div
-                    class="database-indicator"
-                >
+                <div class="database-indicator">
 
-                    <span
-                        class="database-pulse"
-                    ></span>
+                    <span class="database-pulse"></span>
 
 
                     <div>
@@ -918,9 +960,7 @@
                         </strong>
 
 
-                        <small
-                            id="databaseStatus"
-                        >
+                        <small id="databaseStatus">
                             IndexedDB
                         </small>
 
@@ -1270,7 +1310,7 @@
 
 
 <!-- =============================================================
-     حاوية النوافذ
+     حاوية النوافذ المنبثقة
      ============================================================= -->
 
 <div
@@ -1303,7 +1343,7 @@
 
 
 <!-- =============================================================
-     تأثير الانتقال
+     تأثير الانتقال بين الصفحات
      ============================================================= -->
 
 <div
@@ -1314,7 +1354,7 @@
 
 
 <!-- =============================================================
-     طبقة تأثير النقر
+     تأثيرات النقر
      ============================================================= -->
 
 <div
@@ -1326,55 +1366,151 @@
 
 <!-- =============================================================
      ملفات JavaScript
+     
+     جميع ملفات JS موجودة في Root بجانب index.html
+     لذلك لا نستخدم js/
      ============================================================= -->
 
 
-<!-- قاعدة البيانات IndexedDB -->
+<!-- =============================================================
+     قاعدة البيانات
+     ============================================================= -->
 
-<script src="js/database.js"></script>
-
-
-<!-- الأدوات العامة -->
-
-<script src="js/data.js"></script>
+<script src="./database.js"></script>
 
 
-<!-- أقسام الموقع -->
+<!-- =============================================================
+     البيانات والأدوات العامة
+     ============================================================= -->
 
-<script src="js/dashboard.js"></script>
-
-<script src="js/students.js"></script>
-
-<script src="js/classes.js"></script>
-
-<script src="js/attendance.js"></script>
-
-<script src="js/grades.js"></script>
-
-<script src="js/assignments.js"></script>
-
-<script src="js/exams.js"></script>
-
-<script src="js/schedule.js"></script>
-
-<script src="js/notes.js"></script>
-
-<script src="js/notifications.js"></script>
-
-<script src="js/themes.js"></script>
-
-<script src="js/settings.js"></script>
-
-<script src="js/backup.js"></script>
-
-<script src="js/contact.js"></script>
-
-<script src="js/messages.js"></script>
+<script src="./data.js"></script>
 
 
-<!-- التطبيق الرئيسي -->
+<!-- =============================================================
+     أقسام الموقع
+     ============================================================= -->
 
-<script src="js/app.js"></script>
+<script src="./dashboard.js"></script>
+
+<script src="./students.js"></script>
+
+<script src="./classes.js"></script>
+
+<script src="./attendance.js"></script>
+
+<script src="./grades.js"></script>
+
+<script src="./assignments.js"></script>
+
+<script src="./exams.js"></script>
+
+<script src="./schedule.js"></script>
+
+<script src="./notes.js"></script>
+
+<script src="./notifications.js"></script>
+
+<script src="./themes.js"></script>
+
+<script src="./settings.js"></script>
+
+<script src="./backup.js"></script>
+
+<script src="./contact.js"></script>
+
+<script src="./messages.js"></script>
+
+
+<!-- =============================================================
+     التطبيق الرئيسي
+     ============================================================= -->
+
+<script src="./app.js"></script>
+
+
+<!-- =============================================================
+     فحص أخطاء تحميل الملفات
+     ============================================================= -->
+
+<script>
+(function () {
+
+    "use strict";
+
+    /*
+     * هذا الفحص لا يغيّر عمل الموقع.
+     * وظيفته فقط إعطاء معلومات واضحة في Console
+     * إذا فشل تحميل أحد الملفات.
+     */
+
+    window.addEventListener("error", function (event) {
+
+        if (
+            event &&
+            event.target &&
+            (
+                event.target.tagName === "SCRIPT" ||
+                event.target.tagName === "LINK" ||
+                event.target.tagName === "IMG"
+            )
+        ) {
+
+            var element = event.target;
+
+            var source =
+                element.src ||
+                element.href ||
+                "";
+
+            console.error(
+                "TEACHER PRO - فشل تحميل الملف:",
+                source
+            );
+
+        }
+
+    }, true);
+
+
+    /*
+     * منع القائمة التي تظهر بالضغط المطول
+     * في الأجهزة التي تدعم ذلك.
+     */
+
+    document.addEventListener(
+        "contextmenu",
+        function (event) {
+
+            event.preventDefault();
+
+        },
+        false
+    );
+
+
+    /*
+     * منع السحب العشوائي للصور.
+     */
+
+    document.addEventListener(
+        "dragstart",
+        function (event) {
+
+            if (
+                event.target &&
+                event.target.tagName === "IMG"
+            ) {
+
+                event.preventDefault();
+
+            }
+
+        },
+        false
+    );
+
+})();
+</script>
 
 
 </body>
