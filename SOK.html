@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MOKO | My Small World</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SOKO | My Small World</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link
-href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=Changa:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
 rel="stylesheet"><link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"><style>
@@ -50,8 +50,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     --hover-lift:-7px;
 
-    --arabic-font:"El Messiri";
-    --english-font:"Manrope";
+    --arabic-font:"Audiowide";
+    --english-font:"Audiowide";
 
     --font-weight:600;
 
@@ -3835,7 +3835,39 @@ body.reduced-motion *{
 
 }
 
-</style></head><body><div class="particles" id="particles"></div><main class="app"><!-- =====================================================
+
+
+/* ===== SOKO FINAL UPDATES ===== */
+.top-clock{width:min(260px,92vw);margin:0 auto 16px;padding:14px 22px;display:flex;align-items:center;justify-content:center;gap:12px;font-family:"Orbitron",sans-serif;font-size:1.15rem;letter-spacing:2px;color:#fff;text-shadow:0 0 14px rgba(255,255,255,.65)}
+.top-clock i{color:#fff!important;text-shadow:0 0 8px rgba(255,255,255,.95),0 0 20px rgba(255,255,255,.55)!important;filter:drop-shadow(0 0 8px rgba(255,255,255,.8))!important}
+.live-clock{font-family:"Orbitron",sans-serif!important}
+.album{margin:22px 0;padding:14px;overflow:hidden!important}
+.album-track{display:flex;width:max-content;gap:12px;animation:sokoAlbumScroll 35s linear infinite;will-change:transform}
+.album:hover .album-track{animation-play-state:paused}
+.album-image{width:180px!important;height:180px!important;aspect-ratio:auto!important;flex:0 0 auto;animation:none!important}
+@keyframes sokoAlbumScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* English + Arabic typography */
+body,button,input,textarea,.nav-button,.brand-name,.profile-name,.welcome-title,.section-title,.hero-main-title,.music-name{font-family:"Audiowide",sans-serif!important}
+
+/* Icons stay bright and visible with every theme */
+i,.nav-button i,.social-icon i,.section-title i,.game-card i,.contact-card i{
+color:#fff!important;
+text-shadow:0 0 5px rgba(255,255,255,.95),0 0 14px currentColor,0 0 28px rgba(255,255,255,.65)!important;
+filter:drop-shadow(0 0 5px rgba(255,255,255,.95)) drop-shadow(0 0 14px rgba(255,255,255,.65))!important;
+opacity:1!important
+}
+
+/* Luxury loading screen */
+#sokoLoader{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,rgba(255,255,255,.08),rgba(5,7,12,.98) 60%);backdrop-filter:blur(18px);transition:opacity .7s ease,visibility .7s ease}
+#sokoLoader.hide{opacity:0;visibility:hidden}
+.soko-loader-card{width:min(360px,88vw);padding:30px;border-radius:30px;text-align:center;background:rgba(20,24,34,.58);border:1px solid rgba(255,255,255,.2);box-shadow:0 25px 80px rgba(0,0,0,.65),0 0 55px var(--glow);backdrop-filter:blur(25px)}
+.soko-loader-card img{width:92px;height:92px;object-fit:cover;border-radius:24px;margin-bottom:16px;box-shadow:0 0 30px var(--glow)}
+.soko-loader-name{font-family:"Orbitron",sans-serif;font-size:2rem;letter-spacing:7px;margin-bottom:18px}
+.soko-progress{height:8px;border-radius:20px;overflow:hidden;background:rgba(255,255,255,.1)}
+.soko-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#fff,var(--primary),var(--secondary),#fff);animation:sokoLoad 2.2s ease forwards}
+@keyframes sokoLoad{to{width:100%}}
+</style></head><body><div id="sokoLoader"><div class="soko-loader-card"><img src="AA.jpg" alt="SOKO"><div class="soko-loader-name">SOKO</div><div class="soko-progress"><span></span></div></div></div><div class="particles" id="particles"></div><main class="app"><div class="top-clock glass" aria-label="Current time"><i class="fa-solid fa-clock"></i><span id="liveClock">--:-- --</span></div><!-- =====================================================
      HEADER
 ===================================================== --><header class="header glass"><div class="brand"><img
 src="AA.jpg"
@@ -3917,25 +3949,17 @@ MY SMALL WORLD • PERSONAL SPACE
 <i class="fa-solid fa-heart"></i>
 <strong>MOKO</strong>
 <span>WORLD</span>
-</div></div><div class="live-clock" id="liveClock">
---:--:--
-</div></div><h2 class="welcome-title">
+</div></div></div><h2 class="welcome-title">
 أهلاً بك في عالمي الصغير
 </h2><p class="welcome-text">
 هذا عالمي الشخصي.
 مكان يجمع الصور والموسيقى والألعاب
 وكل ما أحبه بطريقة زجاجية
 مضيئة وفخمة.
-</p><div class="album"><img src="1.jpg" class="album-image">
-<img src="2.jpg" class="album-image">
-<img src="3.jpg" class="album-image">
-<img src="4.jpg" class="album-image">
-<img src="5.jpg" class="album-image">
-<img src="6.jpg" class="album-image">
-<img src="7.jpg" class="album-image">
-<img src="8.jpg" class="album-image">
-<img src="9.jpg" class="album-image">
-<img src="10.jpg" class="album-image"></div><div class="music-player"><i class="fa-solid fa-music music-icon"></i>
+</p><div class="album glass"><div class="album-track">
+<img src="1.jpg" class="album-image"><img src="2.jpg" class="album-image"><img src="3.jpg" class="album-image"><img src="4.jpg" class="album-image"><img src="5.jpg" class="album-image"><img src="6.jpg" class="album-image"><img src="7.jpg" class="album-image"><img src="8.jpg" class="album-image"><img src="9.jpg" class="album-image"><img src="10.jpg" class="album-image">
+<img src="1.jpg" class="album-image"><img src="2.jpg" class="album-image"><img src="3.jpg" class="album-image"><img src="4.jpg" class="album-image"><img src="5.jpg" class="album-image"><img src="6.jpg" class="album-image"><img src="7.jpg" class="album-image"><img src="8.jpg" class="album-image"><img src="9.jpg" class="album-image"><img src="10.jpg" class="album-image">
+</div></div><div class="music-player"><i class="fa-solid fa-music music-icon"></i>
 
 <div class="music-content"><span class="music-name">
 MOKO — JJ.mp3
@@ -4863,9 +4887,7 @@ checked>
 
 <span class="slider"></span>
 
-</label></div></div></div></div></div></section><footer>
-© MOKO — MY SMALL WORLD
-</footer></main><!-- =====================================================
+</label></div></div></div></div></div></section></main><!-- =====================================================
      GLASS CHOICE MODAL
 ===================================================== --><div
 class="choice-overlay"
@@ -5355,7 +5377,7 @@ $("#sendMessage")
         ){
 
             showToast(
-                "ضع رابط Discord Webhook أولاً"
+                "https://discord.com/api/webhooks/1543603322563330200/6iJFpnPCOsYGDeArxVpWVhrErAzd9UmuHWOL_-5CO0nXsNoLdj3rnBWRf2W7Gq6DJwCF"
             );
 
             return;
@@ -7951,7 +7973,7 @@ window.addEventListener(
             () => {
 
                 showToast(
-                    "Welcome to MOKO ✦"
+                    "Welcome to SOKO ✦"
                 );
 
             },
@@ -7961,4 +7983,15 @@ window.addEventListener(
     }
 );
 
+
+
+/* SOKO LOADER */
+window.addEventListener("load",()=>{setTimeout(()=>document.getElementById("sokoLoader")?.classList.add("hide"),2200);});
+
+/* 12-hour luxury clock */
+function updateSokoClock(){
+ const el=document.getElementById("liveClock");
+ if(el) el.textContent=new Intl.DateTimeFormat("en-US",{hour:"numeric",minute:"2-digit",second:"2-digit",hour12:true}).format(new Date());
+}
+updateSokoClock();setInterval(updateSokoClock,1000);
 </script></body></html>
