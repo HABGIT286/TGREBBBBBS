@@ -3874,6 +3874,33 @@ html[lang="en"], .english, .brand-name, .nav-button, .hero-subtitle,
 /* Icons: elegant pulse/shine, not permanent neon glow */
 i{animation:sokoIconShimmer 2.8s ease-in-out infinite!important;text-shadow:none!important;filter:none!important}
 @keyframes sokoIconShimmer{0%,100%{opacity:.72;transform:scale(1)}50%{opacity:1;transform:scale(1.11)}}
+
+
+/* ===== FINAL SLIDESHOW + LUXURY THEMES ===== */
+.album-thumbnails{display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:9px!important;margin:22px 0!important}
+.album-thumbnails .album-image{width:100%!important;height:auto!important;aspect-ratio:1!important;object-fit:cover!important;flex:none!important}
+
+.album-carousel{width:min(760px,100%);margin:28px auto 0;padding:16px;text-align:center;overflow:hidden}
+.album-slideshow{position:relative;width:100%;height:340px;border-radius:22px;overflow:hidden;background:rgba(0,0,0,.25)}
+.album-slideshow .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1s ease,transform 5s ease}
+.album-slideshow .slide.active{opacity:1;transform:scale(1)}
+.album-dots{display:flex;justify-content:center;gap:7px;padding-top:13px}
+.album-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);transition:.35s}
+.album-dot.active{width:24px;border-radius:10px;background:var(--primary);box-shadow:0 0 12px var(--glow)}
+
+body,.nav-button,.brand-name,.profile-small-title,.hero-subtitle,.music-name,.game-card h3,.contact-card h3,.theme-button,.choice-button,.control-tab,.value-badge{font-family:"Audiowide",sans-serif!important}
+[dir="rtl"] body{font-family:"Cairo",sans-serif!important;font-weight:700}
+[dir="rtl"] .nav-button,[dir="rtl"] .brand-name,[dir="rtl"] .profile-small-title,[dir="rtl"] .hero-subtitle,[dir="rtl"] .music-name,[dir="rtl"] .game-card h3,[dir="rtl"] .contact-card h3,[dir="rtl"] .theme-button{font-family:"Audiowide","Cairo",sans-serif!important}
+
+/* premium glass theme */
+body.theme-aurora .glass{background:linear-gradient(135deg,rgba(125,211,252,.16),rgba(167,139,250,.08),rgba(255,255,255,.04));border-color:rgba(255,255,255,.28);box-shadow:0 25px 90px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.2)}
+body.theme-aurora{--primary:#7dd3fc;--secondary:#a78bfa;--primary-rgb:125,211,252;--glow:rgba(125,211,252,.45)}
+body.theme-royal .glass{background:linear-gradient(135deg,rgba(212,175,55,.16),rgba(80,50,15,.12),rgba(255,255,255,.035));border-color:rgba(212,175,55,.32);box-shadow:0 25px 90px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,215,120,.16)}
+body.theme-royal{--primary:#d4af37;--secondary:#fff0a3;--primary-rgb:212,175,55;--glow:rgba(212,175,55,.42)}
+body.theme-ice .glass{background:linear-gradient(135deg,rgba(220,245,255,.18),rgba(80,170,210,.08),rgba(255,255,255,.04));border-color:rgba(220,245,255,.3)}
+body.theme-ice{--primary:#dff7ff;--secondary:#67d5ff;--primary-rgb:103,213,255;--glow:rgba(103,213,255,.45)}
+
+@media(max-width:650px){.album-thumbnails{grid-template-columns:repeat(5,1fr)!important;gap:5px!important}.album-thumbnails .album-image{border-radius:9px!important}.album-slideshow{height:240px}}
 </style><link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cairo:wght@700;800;900&family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet"></head><body><div class="particles" id="particles"></div><main class="app"><!-- =====================================================
      HEADER
 ===================================================== --><header class="header glass"><div class="brand"><img
@@ -3998,7 +4025,9 @@ PAUSE
 
 </button></div></div></div></div></div></div></section><!-- =====================================================
      DOV
-===================================================== --><div class="album-carousel glass"><div class="album-track"><img src="1.jpg"><img src="2.jpg"><img src="3.jpg"><img src="4.jpg"><img src="5.jpg"><img src="6.jpg"><img src="7.jpg"><img src="8.jpg"><img src="9.jpg"><img src="10.jpg"><img src="1.jpg"><img src="2.jpg"><img src="3.jpg"><img src="4.jpg"><img src="5.jpg"><img src="6.jpg"><img src="7.jpg"><img src="8.jpg"><img src="9.jpg"><img src="10.jpg"></div></div><section id="dov" class="tab"><div class="section glass"><h2 class="section-title">
+===================================================== --><div class="album-carousel glass"><div class="album-slideshow" id="albumSlideshow">
+<img src="1.jpg" class="slide active"><img src="2.jpg" class="slide"><img src="3.jpg" class="slide"><img src="4.jpg" class="slide"><img src="5.jpg" class="slide"><img src="6.jpg" class="slide"><img src="7.jpg" class="slide"><img src="8.jpg" class="slide"><img src="9.jpg" class="slide"><img src="10.jpg" class="slide">
+</div><div class="album-dots" id="albumDots"></div></div><section id="dov" class="tab"><div class="section glass"><h2 class="section-title">
 <i class="fa-solid fa-user"></i>
 DOV
 </h2><div class="about-card"><div class="about-row">
@@ -8007,4 +8036,24 @@ document.addEventListener('click',function(e){
  card.classList.add('soko-clicked');
  setTimeout(()=>card.classList.remove('soko-clicked'),800);
 });
+
+
+/* Automatic one-image album slideshow */
+(function(){
+ const slides=[...document.querySelectorAll('#albumSlideshow .slide')];
+ const dotsBox=document.getElementById('albumDots');
+ if(!slides.length||!dotsBox)return;
+ let current=0;
+ slides.forEach((_,i)=>{const d=document.createElement('span');d.className='album-dot'+(i===0?' active':'');dotsBox.appendChild(d)});
+ const dots=[...dotsBox.children];
+ function show(n){slides[current].classList.remove('active');dots[current].classList.remove('active');current=(n+slides.length)%slides.length;slides[current].classList.add('active');dots[current].classList.add('active')}
+ setInterval(()=>show(current+1),3500);
+})();
+
+/* Add luxury themes to existing theme system */
+window.SOKO_EXTRA_THEMES={
+ Aurora:{className:'theme-aurora'},
+ Royal:{className:'theme-royal'},
+ Ice:{className:'theme-ice'}
+};
 </script></body></html>
