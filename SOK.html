@@ -3847,7 +3847,34 @@ i{color:var(--primary)!important;text-shadow:none!important;filter:none!importan
 .album-thumbnails{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:22px 0}.album-thumbnails img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:15px;border:1px solid var(--border);transition:.4s}.album-thumbnails img:hover{transform:scale(1.08)}
 .album-carousel{margin:35px auto 0;padding:15px;width:100%;overflow:hidden}.album-track{display:flex;gap:12px;width:max-content;animation:albumScroll 32s linear infinite}.album-carousel img{width:170px;height:170px;object-fit:cover;border-radius:16px;flex:none}@keyframes albumScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:700px){.album-thumbnails{grid-template-columns:repeat(2,1fr)}.top-clock{margin-right:auto;margin-left:0}.album-carousel img{width:130px;height:130px}}
-</style></head><body><div class="particles" id="particles"></div><main class="app"><!-- =====================================================
+
+
+/* =====================================================
+   SOKO FINAL MOTION + CLICK SHINE
+===================================================== */
+:root{--english-font:"Audiowide",sans-serif}
+html[lang="en"], .english, .brand-name, .nav-button, .hero-subtitle,
+.music-name, .home-stat strong, .home-stat span, button, input, textarea,
+.profile-switch, .section-title .en{font-family:"Audiowide",sans-serif!important}
+
+/* Make every horizontal album genuinely move continuously */
+.album{overflow:hidden!important;position:relative!important}
+.album-track{display:flex!important;flex-wrap:nowrap!important;width:max-content!important;gap:12px!important;animation:sokoInfiniteScroll 24s linear infinite!important;will-change:transform}
+.album:hover .album-track{animation-play-state:paused!important}
+.album-image{flex:0 0 170px!important;width:170px!important;height:170px!important;object-fit:cover!important;animation:none!important}
+@keyframes sokoInfiniteScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Premium glass click flash */
+.glass{cursor:pointer}
+.glass.soko-clicked::before{content:""!important;position:absolute!important;inset:-40%!important;z-index:50!important;pointer-events:none!important;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.05) 42%,rgba(255,255,255,.9) 50%,rgba(255,255,255,.12) 58%,transparent 65%)!important;transform:translateX(-70%) rotate(8deg)!important;animation:sokoGlassShine .75s ease-out forwards!important;mix-blend-mode:screen!important}
+.glass.soko-clicked{animation:sokoGlassTap .55s ease-out!important}
+@keyframes sokoGlassShine{to{transform:translateX(75%) rotate(8deg)}}
+@keyframes sokoGlassTap{0%{filter:brightness(1);transform:scale(1)}35%{filter:brightness(1.22);transform:scale(.992)}100%{filter:brightness(1);transform:scale(1)}}
+
+/* Icons: elegant pulse/shine, not permanent neon glow */
+i{animation:sokoIconShimmer 2.8s ease-in-out infinite!important;text-shadow:none!important;filter:none!important}
+@keyframes sokoIconShimmer{0%,100%{opacity:.72;transform:scale(1)}50%{opacity:1;transform:scale(1.11)}}
+</style><link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cairo:wght@700;800;900&family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet"></head><body><div class="particles" id="particles"></div><main class="app"><!-- =====================================================
      HEADER
 ===================================================== --><header class="header glass"><div class="brand"><img
 src="AA.jpg"
@@ -4873,9 +4900,7 @@ checked>
 
 <span class="slider"></span>
 
-</label></div></div></div></div></div></section><footer>
-© MOKO — MY SMALL WORLD
-</footer></main><!-- =====================================================
+</label></div></div></div></div></div></section></main><!-- =====================================================
      GLASS CHOICE MODAL
 ===================================================== --><div
 class="choice-overlay"
@@ -5361,7 +5386,7 @@ $("#sendMessage")
         if(
             !CONFIG.DISCORD_WEBHOOK_URL ||
             CONFIG.DISCORD_WEBHOOK_URL ===
-            "https://discord.com/api/webhooks/1543603322563330200/6iJFpnPCOsYGDeArxVpWVhrErAzd9UmuHWOL_-5CO0nXsNoLdj3rnBWRf2W7Gq6DJwCF"
+            "ضع_رابط_Discord_Webhook_هنا"
         ){
 
             showToast(
@@ -7971,4 +7996,15 @@ window.addEventListener(
     }
 );
 
-</script><script>function updateSokoClock(){const e=document.getElementById("liveClock");if(e)e.textContent=new Intl.DateTimeFormat("en-US",{hour:"numeric",minute:"2-digit",second:"2-digit",hour12:true}).format(new Date())}updateSokoClock();setInterval(updateSokoClock,1000);</script></body></html>
+</script><script>function updateSokoClock(){const e=document.getElementById("liveClock");if(e)e.textContent=new Intl.DateTimeFormat("en-US",{hour:"numeric",minute:"2-digit",second:"2-digit",hour12:true}).format(new Date())}updateSokoClock();setInterval(updateSokoClock,1000);
+
+/* Glass card click shine */
+document.addEventListener('click',function(e){
+ const card=e.target.closest('.glass');
+ if(!card) return;
+ card.classList.remove('soko-clicked');
+ void card.offsetWidth;
+ card.classList.add('soko-clicked');
+ setTimeout(()=>card.classList.remove('soko-clicked'),800);
+});
+</script></body></html>
