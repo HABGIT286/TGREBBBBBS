@@ -11,21 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: تحميل المشروع
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: إعداد Python
-        uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-          cache: "pip"
 
-      - name: تثبيت المكتبات
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install python-telegram-bot httpx beautifulsoup4 lxml
 
-      - name: تشغيل ASTRO BOT
+      - name: Start ASTRO BOT
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           OWNER_ID: ${{ secrets.OWNER_ID }}
